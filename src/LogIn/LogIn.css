@@ -1,0 +1,20 @@
+fieldset {
+    border: 0;
+}
+
+.Login_form_user_name, .Login_form_password, .Login_button {
+    display: block;
+}
+
+.Login {
+    padding: 15px;
+    background-color: #cccc;
+}
+
+.Login_form_user_name, .Login_form_password {
+    margin-bottom: 8px;
+}
+
+label {
+    margin-right: 5px;
+}

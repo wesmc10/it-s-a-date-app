@@ -1,0 +1,7 @@
+.Signup_form_first_name, .Signup_form_last_name, .Signup_form_user_name, .Signup_form_password {
+    margin-bottom: 8px;
+}
+
+legend {
+    font-size: 20px;
+}
