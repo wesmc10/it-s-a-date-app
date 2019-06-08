@@ -3,7 +3,7 @@ import './SignUp.css';
 import ItsADateContext from '../ItsADateContext';
 
 export default class SignUp extends Component {
-    
+
     state = {
         firstName: '',
         lastName: '',

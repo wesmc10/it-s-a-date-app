@@ -1,0 +1,32 @@
+.Create_event_title {
+    font-size: 36px;
+    text-align: center;
+}
+
+.Create_event_name_label, #Create_event_name,
+.Create_event_description_label, #Create_event_description,
+.Create_event_time_label, #Create_event_time,
+.Create_event_location_label, #Create_event_location,
+.Create_event_other_label, #Create_event_other {
+    display: block;
+}
+
+.Create_event_form {
+    margin-left: 15px;
+}
+
+.Create_event_name_label, .Create_event_description_label,
+.Create_event_time_label, .Create_event_location_label,
+.Create_event_other_label {
+    margin-bottom: 5px;
+}
+
+#Create_event_name, #Create_event_description,
+#Create_event_time, #Create_event_location,
+#Create_event_other {
+    margin-bottom: 10px;
+}
+
+.Create_event_submit {
+    margin-right: 8px;
+}

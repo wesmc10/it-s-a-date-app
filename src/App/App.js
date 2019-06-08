@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import LandingPage from '../LandingPage/LandingPage';
 import ItsADateContext from '../ItsADateContext';
+import CreateCalendar from '../CreateCalendar/CreateCalendar';
+import CreateEvent from '../CreateEvent/CreateEvent';
 import './App.css';
 
 export default class App extends Component {
@@ -12,12 +14,22 @@ export default class App extends Component {
         error: null
     };
 
-    handleAddCalendar = (calendar) => {
-        console.log('adding calendar');
+    handleAddCalendar = (newCalendar) => {
+        this.setState({
+            calendars: [
+                ...this.state.calendars,
+                newCalendar
+            ]
+        });   
     }
 
-    handleAddEvent = (event) => {
-        console.log('adding event');
+    handleAddEvent = (newEvent) => {
+        this.setState({
+            events: [
+                ...this.state.events,
+                newEvent
+            ]
+        });
     }
 
     handleAddUser = (newUser) => {
@@ -47,8 +59,16 @@ export default class App extends Component {
                     <Switch>
                         <Route
                             exact
-                            path={'/'}
+                            path='/'
                             component={LandingPage}
+                        />
+                        <Route
+                            path='/create-calendar'
+                            component={CreateCalendar}
+                        />
+                        <Route
+                            path='/create-event'
+                            component={CreateEvent}
                         />
                     </Switch>
                 </main>
