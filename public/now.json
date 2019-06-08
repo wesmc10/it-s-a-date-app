@@ -1,0 +1,14 @@
+{
+    "version": 2,
+    "name": "its-a-date-app",
+    "routes": [
+        {
+          "src": "^/static/(.*)",
+          "dest": "/static/$1"
+        },
+        {
+          "src": ".*",
+          "dest": "/index.html"
+        }
+    ]
+}
