@@ -4,49 +4,65 @@ import LandingPage from '../LandingPage/LandingPage';
 import ItsADateContext from '../ItsADateContext';
 import CreateCalendar from '../CreateCalendar/CreateCalendar';
 import CreateEvent from '../CreateEvent/CreateEvent';
+import Event from '../Event/Event';
+import STORE from '../dummy-store';
 import './App.css';
+import Calendar from '../Calendar/Calendar';
 
 export default class App extends Component {
+
+    static defaultProps = {
+        store: {
+            calendars: [],
+            events: [],
+            users: []
+        }
+    }
+
     state = {
-        calendars: [],
-        events: [],
-        users: [],
-        error: null
+        store: STORE
     };
 
     handleAddCalendar = (newCalendar) => {
         this.setState({
-            calendars: [
-                ...this.state.calendars,
-                newCalendar
-            ]
+            store: {
+                calendars: [
+                    ...this.state.store.calendars,
+                    newCalendar
+                ]
+            }
         });   
     }
 
     handleAddEvent = (newEvent) => {
         this.setState({
-            events: [
-                ...this.state.events,
-                newEvent
-            ]
+            store: {
+                events: [
+                    ...this.state.store.events,
+                    newEvent
+                ]
+            }
         });
     }
 
     handleAddUser = (newUser) => {
+        console.log(`Adding ${newUser.firstName}`)
         this.setState({
-            users: [
-                ...this.state.users,
-                newUser
-            ]
+            store: {
+                users: [
+                    ...this.state.store.users,
+                    newUser
+                ]
+            }
         });
     }
 
     render() {
 
         const contextValue = {
-            calendars: this.state.calendars,
-            events: this.state.events,
-            users: this.state.users,
+            calendars: this.state.store.calendars,
+            events: this.state.store.events,
+            users: this.state.store.users,
             addCalendar: this.handleAddCalendar,
             addEvent: this.handleAddEvent,
             addUser: this.handleAddUser
@@ -63,12 +79,20 @@ export default class App extends Component {
                             component={LandingPage}
                         />
                         <Route
-                            path='/create-calendar'
+                            path='/:userId/create-calendar'
                             component={CreateCalendar}
                         />
                         <Route
-                            path='/create-event'
+                            path='/:userId/create-event'
                             component={CreateEvent}
+                        />
+                        <Route
+                            path='/:userId/calendar'
+                            component={Calendar}
+                        />
+                        <Route
+                            path='/:userId/event'
+                            component={Event}
                         />
                     </Switch>
                 </main>

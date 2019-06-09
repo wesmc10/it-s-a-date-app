@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LogOut from '../LogOut/LogOut';
 import './CreateEvent.css';
 import ItsADateContext from '../ItsADateContext';
+import uuid from 'uuid';
 
 export default class CreateEvent extends Component {
 
@@ -21,7 +22,9 @@ export default class CreateEvent extends Component {
         
         const { name, description, time, location, other } = this.state;
 
+        const id = uuid();
         const newEvent = {
+            id,
             name,
             description,
             time,

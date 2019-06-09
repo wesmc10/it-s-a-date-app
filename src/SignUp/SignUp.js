@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './SignUp.css';
 import ItsADateContext from '../ItsADateContext';
+import uuid from 'uuid';
 
 export default class SignUp extends Component {
 
@@ -14,11 +15,19 @@ export default class SignUp extends Component {
 
     static contextType = ItsADateContext;
 
+    static defaultProps = {
+        history: {
+          push: () => {}
+        }
+    };
+
     handleSubmit = (e) => {
         e.preventDefault();
         const { firstName, lastName, userName, password } = this.state;
 
+        const id = uuid();
         const newUser = {
+            id,
             firstName,
             lastName,
             userName,
@@ -26,6 +35,7 @@ export default class SignUp extends Component {
         };
 
         this.context.addUser(newUser);
+        this.props.history.push(`/${id}/create-calendar`);
     }
 
     handleFirstNameChange = (e) => {

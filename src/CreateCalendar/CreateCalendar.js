@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LogOut from '../LogOut/LogOut';
 import './CreateCalendar.css';
 import ItsADateContext from '../ItsADateContext';
+import uuid from 'uuid';
 
 export default class CreateCalendar extends Component {
 
@@ -16,7 +17,9 @@ export default class CreateCalendar extends Component {
         e.preventDefault();
         const { name } = this.state;
 
+        const id = uuid();
         const newCalendar = {
+            id,
             name
         };
 
@@ -57,11 +60,8 @@ export default class CreateCalendar extends Component {
                                 onChange={this.handleCalendarNameChange}
                             />
                         </div>
-                        <button type="submit" className="Create_calendar_submit">
+                        <button type="submit">
                             Create
-                        </button>
-                        <button type="reset">
-                            Cancel
                         </button>
                     </form>
                 </section>

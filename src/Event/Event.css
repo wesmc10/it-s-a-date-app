@@ -1,0 +1,17 @@
+.Event_name {
+    font-size: 36px;
+    text-align: center;
+}
+
+.section_tag, .section_time {
+    text-align: center;
+}
+
+.section_description {
+    margin: 0 15px 0 15px;
+}
+
+.Event_edit_button {
+    margin: 20px 0 25px 0;
+    text-align: center;
+}
