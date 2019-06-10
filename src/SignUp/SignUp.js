@@ -17,7 +17,7 @@ export default class SignUp extends Component {
 
     static defaultProps = {
         history: {
-          push: () => {}
+            push: () => {}
         }
     };
 

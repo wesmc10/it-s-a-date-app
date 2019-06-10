@@ -1,0 +1,7 @@
+.day_name_column {
+    display: inline-block;
+    width: calc(100% / 7);
+    text-align: center;
+    padding: 7px 0;
+    border-bottom: 1px solid black;
+}

@@ -8,7 +8,7 @@ export default function LandingPage(props) {
     return (
         <div className="Landing_page">
             <header className="Login_header">
-                <LogIn />
+                <LogIn {...props} />
             </header>
             <section className="Landing_page_content_section">
                 <h1 className="title">It's a Date</h1>

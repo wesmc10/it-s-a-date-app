@@ -20,7 +20,7 @@ export default class App extends Component {
     }
 
     state = {
-        store: STORE
+        store: STORE,
     };
 
     handleAddCalendar = (newCalendar) => {
@@ -87,7 +87,7 @@ export default class App extends Component {
                             component={CreateEvent}
                         />
                         <Route
-                            path='/:userId/calendar'
+                            path='/calendar'
                             component={Calendar}
                         />
                         <Route
