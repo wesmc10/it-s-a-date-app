@@ -16,26 +16,17 @@ export default class CreateCalendar extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         const { name } = this.state;
+        const { userId } = this.props.match.params;
 
         const id = uuid();
         const newCalendar = {
             id,
-            name
+            name,
+            userId
         };
 
-        let userUpdatedWithCalendarId = this.context.currentUser;
-        userUpdatedWithCalendarId = {
-            id: userUpdatedWithCalendarId.id,
-            firstName: userUpdatedWithCalendarId.firstName,
-            lastName: userUpdatedWithCalendarId.lastName,
-            userName: userUpdatedWithCalendarId.userName,
-            password: userUpdatedWithCalendarId.password,
-            calendarId: id
-        };
-
-        this.context.addCalendarIdToUser(userUpdatedWithCalendarId);
         this.context.addCalendar(newCalendar);
-        this.props.history.push(`/${this.props.match.params.userId}/calendar`);
+        this.props.history.push(`/${userId}/calendar`);
     }
 
     handleCalendarNameChange = (e) => {

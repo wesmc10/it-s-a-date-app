@@ -21,7 +21,8 @@ export default class App extends Component {
 
     state = {
         store: STORE,
-        currentUser: ''
+        currentUser: {},
+        currentCalendar: {}
     };
 
     handleAddCalendar = (newCalendar) => {
@@ -69,9 +70,9 @@ export default class App extends Component {
         });
     }
 
-    handleAddCalendarIdToUser = (updatedUser) => {
+    handleAddCurrentCalendar = (calendar) => {
         this.setState({
-            currentUser: updatedUser
+            currentCalendar: calendar
         });
     }
 
@@ -82,11 +83,12 @@ export default class App extends Component {
             events: this.state.store.events,
             users: this.state.store.users,
             currentUser: this.state.currentUser,
+            currentCalendar: this.state.currentCalendar,
             addCalendar: this.handleAddCalendar,
             addEvent: this.handleAddEvent,
             addUser: this.handleAddUser,
             addCurrentUser: this.handleAddCurrentUser,
-            addCalendarIdToUser: this.handleAddCalendarIdToUser
+            addCurrentCalendar: this.handleAddCurrentCalendar
         };
 
         return (

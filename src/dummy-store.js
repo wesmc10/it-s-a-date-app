@@ -2,43 +2,53 @@ export default {
     "calendars": [
       {
         "id": "b0715efe-ffaf-11e8-8eb2-f2801f1b9fd1",
-        "name": "Wes"
+        "name": "Wes",
+        "userId": "cbc787a0-ffaf-11e8-8eb2-f2801f1b9fd1"
       },
       {
         "id": "b07161a6-ffaf-11e8-8eb2-f2801f1b9fd1",
-        "name": "Super"
+        "name": "Super",
+        "userId": "d26e0034-ffaf-11e8-8eb2-f2801f1b9fd1"
       },
       {
         "id": "b07112f0-ffaf-11e8-8eb2-f2801f1b9fd1",
-        "name": "Important"
+        "name": "Important",
+        "userId": "d26e01a6-ffaf-11e8-8eb2-f2801f1b9fd1"
       },
       {
         "id": "b0712efe-ffaf-11e8-8eb2-f2801g1b9fd1",
-        "name": "There"
+        "name": "There",
+        "userId": "d26e0570-ffaf-11e8-8eb2-f2801f1b9fd1"
       },
       {
         "id": "b07191a6-ffaf-11e8-8eb2-f2801f1b9fd1",
-        "name": "Here"
+        "name": "Here",
+        "userId": "d26e0714-ffaf-11e8-8eb2-f2801f1b9fd1"
       },
       {
         "id": "b07142f0-ffaf-11e8-8eb2-f2801f1b9fd1",
-        "name": "Over"
+        "name": "Over",
+        "userId": "d26e0854-ffaf-11e8-8eb2-f2801f1b9fd1"
       },
       {
         "id": "b0713efe-ffaf-11e8-8eb2-f2801f1b8fd1",
-        "name": "Under"
+        "name": "Under",
+        "userId": "d26e0980-ffaf-11e8-8eb2-f2801f1b9fd1"
       },
       {
         "id": "b07162a6-ffaf-11e8-8eb2-f2801f1b9fd1",
-        "name": "Top"
+        "name": "Top",
+        "userId": "d26e0aac-ffaf-11e8-8eb2-f2801f1b9fd1"
       },
       {
         "id": "b77162f0-ffaf-11e8-8eb2-f2801f1b9fd1",
-        "name": "Left"
+        "name": "Left",
+        "userId": "d26e0bce-ffaf-11e8-8eb2-f2801f1b9fd1"
       },
       {
         "id": "b07162f0-ffaf-11e8-8eb2-f0801f1b9fd1",
-        "name": "Right"
+        "name": "Right",
+        "userId": "d26e0f48-ffaf-11e8-8eb2-f2801f1b9fd1"
       }
     ],
     "events": [
@@ -161,80 +171,70 @@ export default {
           "firstName": "Wes",
           "lastName": "McElroy",
           "userName": "wesmcelroy1919",
-          "password": "password",
-          "calendarId": "b0715efe-ffaf-11e8-8eb2-f2801f1b9fd1"
+          "password": "password"
         },
         {
           "id": "d26e0034-ffaf-11e8-8eb2-f2801f1b9fd1",
           "firstName": "John",
           "lastName": "Garcia",
           "userName": "johhnyg23",
-          "password": "johnpassword",
-          "calendarId": "b07161a6-ffaf-11e8-8eb2-f2801f1b9fd1"
+          "password": "johnpassword"
         },
         {
           "id": "d26e01a6-ffaf-11e8-8eb2-f2801f1b9fd1",
           "firstName": "Sarah",
           "lastName": "McElroy",
           "userName": "sarahlovesdance19",
-          "password": "sarahpassword",
-          "calendarId": "b07112f0-ffaf-11e8-8eb2-f2801f1b9fd1"
+          "password": "sarahpassword"
         },
         {
           "id": "d26e0570-ffaf-11e8-8eb2-f2801f1b9fd1",
           "firstName": "Al",
           "lastName": "Garcia",
           "userName": "alex10",
-          "password": "alpassword",
-          "calendarId": "b0712efe-ffaf-11e8-8eb2-f2801g1b9fd1"
+          "password": "alpassword"
         },
         {
           "id": "d26e0714-ffaf-11e8-8eb2-f2801f1b9fd1",
           "firstName": "Laura",
           "lastName": "Garcia",
           "userName": "dogsncats",
-          "password": "laurapassword",
-          "calendarId": "b07191a6-ffaf-11e8-8eb2-f2801f1b9fd1"
+          "password": "laurapassword"
         },
         {
           "id": "d26e0854-ffaf-11e8-8eb2-f2801f1b9fd1",
           "firstName": "Nicole",
           "lastName": "Garcia",
           "userName": "philosophyrulez",
-          "password": "nicolepassword",
-          "calendarId": "b07142f0-ffaf-11e8-8eb2-f2801f1b9fd1"
+          "password": "nicolepassword"
         },
         {
           "id": "d26e0980-ffaf-11e8-8eb2-f2801f1b9fd1",
           "firstName": "Stephen",
           "lastName": "Garcia",
           "userName": "loveoutdoors15",
-          "password": "stephenpassword",
-          "calendarId": "b07142f0-ffaf-11e8-8eb2-f2801f1b9fd1"
+          "password": "stephenpassword"
         },
         {
           "id": "d26e0aac-ffaf-11e8-8eb2-f2801f1b9fd1",
           "firstName": "James",
           "lastName": "Garcia",
           "userName": "theologyguy3",
-          "password": "jamespassword",
-          "calendarId": "b07162a6-ffaf-11e8-8eb2-f2801f1b9fd1"
+          "password": "jamespassword"
         },
         {
           "id": "d26e0bce-ffaf-11e8-8eb2-f2801f1b9fd1",
           "firstName": "Sarah",
           "lastName": "Garcia",
           "userName": "museumgirl9",
-          "password": "sarahgarciapassword",
-          "calendarId": "b77162f0-ffaf-11e8-8eb2-f2801f1b9fd1"
+          "password": "sarahgarciapassword"
         },
         {
           "id": "d26e0f48-ffaf-11e8-8eb2-f2801f1b9fd1",
           "firstName": "Skooter",
           "lastName": "McElroy",
           "userName": "bonesnstuff",
-          "password": "skooterpassword",
-          "calendarId": "b07162f0-ffaf-11e8-8eb2-f0801f1b9fd1"
+          "password": "skooterpassword"
         }
     ]
 }

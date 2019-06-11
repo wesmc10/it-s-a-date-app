@@ -21,7 +21,7 @@ export default class CreateEvent extends Component {
         e.preventDefault();
         
         const { name, description, time, location, other } = this.state;
-        const calendarId = this.context.currentUser.calendarId;
+        const calendarId = this.context.currentCalendar.id;
 
         const id = uuid();
         const newEvent = {
@@ -30,8 +30,8 @@ export default class CreateEvent extends Component {
             description,
             time,
             location,
-            other,
-            calendarId 
+            calendarId,
+            other
         };
 
         this.context.addEvent(newEvent);

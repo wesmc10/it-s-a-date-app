@@ -3,12 +3,22 @@ import LogOut from '../LogOut/LogOut';
 import Month from '../Month/Month';
 import dateFns from 'date-fns';
 import './Calendar.css';
+import ItsADateContext from '../ItsADateContext';
 
 export default class Calendar extends Component {
 
     state = {
         currentMonth: new Date()
     };
+
+    static contextType = ItsADateContext;
+
+    componentDidMount() {
+        const { userId } = this.props.match.params;
+        const currentCalendar = this.context.calendars.find(calendar => calendar.userId === userId);
+
+        this.context.addCurrentCalendar(currentCalendar);
+    }
 
     handlePreviousMonth = () => {
         this.setState({
