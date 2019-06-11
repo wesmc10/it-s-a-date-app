@@ -1,14 +1,26 @@
 import React, { Component } from 'react';
 import LogOut from '../LogOut/LogOut';
 import Month from '../Month/Month';
+import dateFns from 'date-fns';
 import './Calendar.css';
 
 export default class Calendar extends Component {
 
     state = {
-        currentMonth: new Date(),
-        selectedDate: new Date()
+        currentMonth: new Date()
     };
+
+    handlePreviousMonth = () => {
+        this.setState({
+            currentMonth: dateFns.subMonths(this.state.currentMonth, 1)
+        });
+    }
+
+    handleNextMonth = () => {
+        this.setState({
+            currentMonth: dateFns.addMonths(this.state.currentMonth, 1)
+        });
+    }
 
     render() {
         return (
@@ -17,7 +29,11 @@ export default class Calendar extends Component {
                     <LogOut />
                 </header>
                 <section className="Calendar_view_calendar">
-                    <Month />
+                    <Month 
+                        prevMonth={this.handlePreviousMonth}
+                        nextMonth={this.handleNextMonth}
+                        currentMonth={this.state.currentMonth}
+                    />
                 </section>
             </div>
         )

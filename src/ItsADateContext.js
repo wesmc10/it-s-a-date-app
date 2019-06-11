@@ -4,9 +4,12 @@ const ItsADateContext = React.createContext({
     calendars: [],
     events: [],
     users: [],
+    currentUser: '',
     addCalendar: () => {},
     addEvent: () => {},
-    addUser: () => {}
+    addUser: () => {},
+    addCurrentUser: () => {},
+    addCalendarIdToUser: () => {}
 });
 
 export default ItsADateContext;

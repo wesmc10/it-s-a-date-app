@@ -21,11 +21,14 @@ export default class App extends Component {
 
     state = {
         store: STORE,
+        currentUser: ''
     };
 
     handleAddCalendar = (newCalendar) => {
         this.setState({
             store: {
+                users: this.state.store.users,
+                events: this.state.store.events,
                 calendars: [
                     ...this.state.store.calendars,
                     newCalendar
@@ -37,6 +40,8 @@ export default class App extends Component {
     handleAddEvent = (newEvent) => {
         this.setState({
             store: {
+                calendars: this.state.store.calendars,
+                users: this.state.store.users,
                 events: [
                     ...this.state.store.events,
                     newEvent
@@ -46,14 +51,27 @@ export default class App extends Component {
     }
 
     handleAddUser = (newUser) => {
-        console.log(`Adding ${newUser.firstName}`)
         this.setState({
             store: {
+                calendars: this.state.store.calendars,
+                events: this.state.store.events,
                 users: [
                     ...this.state.store.users,
                     newUser
                 ]
             }
+        });
+    }
+
+    handleAddCurrentUser = (user) => {
+        this.setState({
+            currentUser: user
+        });
+    }
+
+    handleAddCalendarIdToUser = (updatedUser) => {
+        this.setState({
+            currentUser: updatedUser
         });
     }
 
@@ -63,9 +81,12 @@ export default class App extends Component {
             calendars: this.state.store.calendars,
             events: this.state.store.events,
             users: this.state.store.users,
+            currentUser: this.state.currentUser,
             addCalendar: this.handleAddCalendar,
             addEvent: this.handleAddEvent,
-            addUser: this.handleAddUser
+            addUser: this.handleAddUser,
+            addCurrentUser: this.handleAddCurrentUser,
+            addCalendarIdToUser: this.handleAddCalendarIdToUser
         };
 
         return (
@@ -87,7 +108,7 @@ export default class App extends Component {
                             component={CreateEvent}
                         />
                         <Route
-                            path='/calendar'
+                            path='/:userId/calendar'
                             component={Calendar}
                         />
                         <Route

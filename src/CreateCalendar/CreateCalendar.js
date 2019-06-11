@@ -23,7 +23,19 @@ export default class CreateCalendar extends Component {
             name
         };
 
+        let userUpdatedWithCalendarId = this.context.currentUser;
+        userUpdatedWithCalendarId = {
+            id: userUpdatedWithCalendarId.id,
+            firstName: userUpdatedWithCalendarId.firstName,
+            lastName: userUpdatedWithCalendarId.lastName,
+            userName: userUpdatedWithCalendarId.userName,
+            password: userUpdatedWithCalendarId.password,
+            calendarId: id
+        };
+
+        this.context.addCalendarIdToUser(userUpdatedWithCalendarId);
         this.context.addCalendar(newCalendar);
+        this.props.history.push(`/${this.props.match.params.userId}/calendar`);
     }
 
     handleCalendarNameChange = (e) => {

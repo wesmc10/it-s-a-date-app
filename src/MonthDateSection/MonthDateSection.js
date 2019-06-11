@@ -1,25 +1,52 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import dateFns from 'date-fns';
 import './MonthDateSection.css';
+import ItsADateContext from '../ItsADateContext';
 
-export default function MonthDateSection() {
-    const firstDayOfMonth = dateFns.startOfMonth(new Date());
-    const lastDayOfMonth = dateFns.endOfMonth(new Date());
-    const firstDayOnCalendar = dateFns.startOfWeek(firstDayOfMonth);
-    const lastDayOnCalendar = dateFns.endOfWeek(lastDayOfMonth);
-    const daysOfTheMonth = [];
+export default class MonthDateSection extends Component {
+    static contextType = ItsADateContext;
 
-    for (let i = 0; i < dateFns.format(lastDayOfMonth, 'D'); i++) {
-        daysOfTheMonth.push(
-            <div className="day_date_column" key={i}>
-                {dateFns.format(dateFns.addDays(firstDayOfMonth, i), 'D')}
-            </div>            
+    render() {
+        const today = new Date();
+        const firstDayOfMonth = dateFns.startOfMonth(this.props.currentMonth);
+        const lastDayOfMonth = dateFns.endOfMonth(this.props.currentMonth);
+        const firstDayOnTheCalendar = dateFns.startOfWeek(firstDayOfMonth);
+        const lastDayOnTheCalendar = dateFns.endOfWeek(lastDayOfMonth);
+
+        let daysOfTheMonth = [];
+        let day = firstDayOnTheCalendar;
+        const rows = [];
+
+        while (day <= lastDayOnTheCalendar) {
+            for (let i = 0; i < 7; i++) {
+                daysOfTheMonth.push(
+                    <Link to={`/${this.context.currentUser.id}/create-event`} key={i}>
+                        <div className={`day_date_column ${!dateFns.isSameMonth(day, firstDayOfMonth)
+                            ? 'faded' 
+                            : dateFns.isSameDay(day, today)
+                                ? 'selected' 
+                                : ''}`}
+                        >
+                            {dateFns.format(day, 'D')}
+                        </div> 
+                    </Link>           
+                );
+                day = dateFns.addDays(day, 1);
+            }
+
+            rows.push(
+                <div className="week_row" key={day}>
+                    {daysOfTheMonth}
+                </div>
+            );
+            daysOfTheMonth = [];
+        }
+
+        return (
+            <div className="Month_date_section">
+                {rows}
+            </div>
         )
     }
-
-    return (
-        <div className="Month_date_section">
-            {daysOfTheMonth}
-        </div>
-    )
 }

@@ -21,7 +21,8 @@ export default class LogIn extends Component {
             console.log('Username is incorrect');
         } else {
             if (user.password === password) {
-                console.log(user);
+                this.context.addCurrentUser(user);
+                this.props.history.push(`/${user.id}/calendar`)
             } else {
                 console.log('Password is incorrect');
             }

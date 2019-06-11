@@ -1,5 +1,22 @@
 .Month_header {
-    border-bottom: 1px solid blue;
-    padding: 15px;
+    border-bottom: 1px solid black;
+    padding: calc(100% / 13);
     text-align: center;
+    font-size: 22px;
+    position: relative;
+}
+
+.Month_previous {
+    position: absolute;
+    left: 15px;
+}
+
+.Month_previous:hover, .Month_next:hover {
+    cursor: pointer;
+}
+
+.Month_next {
+    position: absolute;
+    right: 15px;
+    top: 25px;
 }

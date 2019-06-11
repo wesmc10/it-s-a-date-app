@@ -35,6 +35,7 @@ export default class SignUp extends Component {
         };
 
         this.context.addUser(newUser);
+        this.context.addCurrentUser(newUser);
         this.props.history.push(`/${id}/create-calendar`);
     }
 

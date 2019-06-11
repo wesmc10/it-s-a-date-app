@@ -21,6 +21,7 @@ export default class CreateEvent extends Component {
         e.preventDefault();
         
         const { name, description, time, location, other } = this.state;
+        const calendarId = this.context.currentUser.calendarId;
 
         const id = uuid();
         const newEvent = {
@@ -29,10 +30,12 @@ export default class CreateEvent extends Component {
             description,
             time,
             location,
-            other
+            other,
+            calendarId 
         };
 
         this.context.addEvent(newEvent);
+        this.props.history.push(`/${this.props.match.params.userId}/calendar`);
     }
 
     handleNameChange = (e) => {
@@ -63,6 +66,10 @@ export default class CreateEvent extends Component {
         this.setState({
             other: e.target.value
         });
+    }
+
+    handleClickCancel = () => {
+        this.props.history.goBack();
     }
 
     render() {
@@ -145,7 +152,7 @@ export default class CreateEvent extends Component {
                         <button type="submit" className="Create_event_submit">
                             Create
                         </button>
-                        <button type="reset">
+                        <button type="reset" onClick={this.handleClickCancel}>
                             Cancel
                         </button>
                     </form>
