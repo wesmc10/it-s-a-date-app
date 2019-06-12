@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import LogOut from '../LogOut/LogOut';
 import Month from '../Month/Month';
 import dateFns from 'date-fns';
@@ -46,7 +47,15 @@ export default class Calendar extends Component {
         });
     }
 
+    handleDeleteCalendar = () => {   
+        const { userId } = this.props.match.params;     
+        const currentCalendar = this.context.calendars.find(calendar => calendar.userId === userId);
+        this.context.deleteCalendar(currentCalendar.id);
+    }
+
     render() {
+        const { userId } = this.props.match.params;
+
         return (
             <div className="Calendar_view">
                 <header className="Calendar_view_header">
@@ -67,6 +76,11 @@ export default class Calendar extends Component {
                         hideModal={this.handleHideModal}
                     />
                 </div>
+                <section className="Calendar_delete_section">
+                    <Link to={`/${userId}/create-calendar`} onClick={this.handleDeleteCalendar}>
+                        Delete Calendar
+                    </Link>
+                </section>
             </div>
         )
     }

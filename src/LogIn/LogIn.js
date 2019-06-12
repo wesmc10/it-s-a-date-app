@@ -20,11 +20,15 @@ export default class LogIn extends Component {
         if (user === undefined) {
             console.log('Username is incorrect');
         } else {
-            if (user.password === password) {
-                this.context.addCurrentUser(user);
-                this.props.history.push(`/${user.id}/calendar`)
-            } else {
+            if (user.password !== password) {
                 console.log('Password is incorrect');
+            } else {
+                this.context.addCurrentUser(user);
+                if (this.context.calendars.find(calendar => calendar.userId === user.id)) {
+                    this.props.history.push(`/${user.id}/calendar`);
+                } else {
+                    this.props.history.push(`/${user.id}/create-calendar`);
+                }
             }
         }
     }

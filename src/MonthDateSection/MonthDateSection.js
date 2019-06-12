@@ -23,7 +23,6 @@ export default class MonthDateSection extends Component {
         while (day <= lastDayOnTheCalendar) {
             for (let i = 0; i < 7; i++) {
                 daysOfTheMonth.push(
-                    /*<Link to={`/${this.context.currentUser.id}/create-event`} key={dateFns.format(day, 'MM DD YYYY')}>*/
                         <Day className={`day_date_column ${!dateFns.isSameMonth(day, firstDayOfMonth)
                             ? 'faded' 
                             : dateFns.isSameDay(day, today)
@@ -34,8 +33,7 @@ export default class MonthDateSection extends Component {
                             showModal={this.props.showModal}
                             history={this.props.history}
                             key={dateFns.format(day, 'MM DD YYYY')}
-                        />
-                    /*</Link>   */        
+                        />      
                 );
                 day = dateFns.addDays(day, 1);
             }

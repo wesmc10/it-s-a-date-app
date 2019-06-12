@@ -39,6 +39,20 @@ export default class App extends Component {
         });   
     }
 
+    handleDeleteCalendar = (calendarId) => {
+        console.log(`deleting calendar with id ${calendarId}`);
+        const newCalendars = this.state.store.calendars.filter(calendar =>
+            calendar.id !== calendarId
+        );
+        this.setState({
+            store: {
+                users: this.state.store.users,
+                events: this.state.store.events,
+                calendars: newCalendars
+            }
+        });
+    }
+
     handleAddEvent = (newEvent) => {
         this.setState({
             store: {
@@ -93,6 +107,7 @@ export default class App extends Component {
             currentCalendar: this.state.currentCalendar,
             clickedDay: this.state.clickedDay,
             addCalendar: this.handleAddCalendar,
+            deleteCalendar: this.handleDeleteCalendar,
             addEvent: this.handleAddEvent,
             addUser: this.handleAddUser,
             addCurrentUser: this.handleAddCurrentUser,

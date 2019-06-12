@@ -13,7 +13,7 @@ export default class Event extends Component {
 
     render() {
         const { events } = this.context;
-        const currentEvent = events.find(event => event.dayId === this.context.clickedDay);
+        const currentEvent = events.find(event => event.id === this.props.match.params.eventId);
 
         return (
             <div className="Event_view">

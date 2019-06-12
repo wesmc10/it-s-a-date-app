@@ -8,6 +8,7 @@ const ItsADateContext = React.createContext({
     currentCalendar: {},
     clickedDay: '',
     addCalendar: () => {},
+    deleteCalendar: () => {},
     addEvent: () => {},
     addUser: () => {},
     addCurrentUser: () => {},
