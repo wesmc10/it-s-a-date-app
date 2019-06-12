@@ -1,0 +1,13 @@
+.Calendar_delete_section {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.Calendar_delete_button {
+    color: red;
+}
+
+.Calendar_name {
+    text-align: center;
+    font-size: 36px;
+}

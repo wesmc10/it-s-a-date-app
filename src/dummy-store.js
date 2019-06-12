@@ -2,7 +2,7 @@ export default {
     "calendars": [
       {
         "id": "b0715efe-ffaf-11e8-8eb2-f2801f1b9fd1",
-        "name": "Wes",
+        "name": "Wes's Calendar",
         "userId": "cbc787a0-ffaf-11e8-8eb2-f2801f1b9fd1"
       },
       {

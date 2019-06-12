@@ -55,12 +55,19 @@ export default class Calendar extends Component {
 
     render() {
         const { userId } = this.props.match.params;
+        const currentCalendar = this.context.calendars.find(calendar => calendar.userId === userId);
 
         return (
             <div className="Calendar_view">
                 <header className="Calendar_view_header">
                     <LogOut />
                 </header>
+                <section className="Calendar_name_section">
+                    <Link to={`/${userId}/edit-calendar`} className="Calendar_edit_button">
+                        Edit
+                    </Link>
+                    <h1 className="Calendar_name">{currentCalendar.name}</h1>
+                </section>
                 <section className="Calendar_view_calendar">
                     <Month 
                         {...this.props}
@@ -77,7 +84,7 @@ export default class Calendar extends Component {
                     />
                 </div>
                 <section className="Calendar_delete_section">
-                    <Link to={`/${userId}/create-calendar`} onClick={this.handleDeleteCalendar}>
+                    <Link to={`/${userId}/create-calendar`} onClick={this.handleDeleteCalendar} className="Calendar_delete_button">
                         Delete Calendar
                     </Link>
                 </section>

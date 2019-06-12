@@ -8,6 +8,7 @@ import Event from '../Event/Event';
 import STORE from '../dummy-store';
 import './App.css';
 import Calendar from '../Calendar/Calendar';
+import EditCalendarName from '../EditCalendarName/EditCalendarName';
 
 export default class App extends Component {
 
@@ -40,7 +41,6 @@ export default class App extends Component {
     }
 
     handleDeleteCalendar = (calendarId) => {
-        console.log(`deleting calendar with id ${calendarId}`);
         const newCalendars = this.state.store.calendars.filter(calendar =>
             calendar.id !== calendarId
         );
@@ -51,6 +51,21 @@ export default class App extends Component {
                 calendars: newCalendars
             }
         });
+    }
+
+    handleUpdateCalendar = (calendar) => {
+        const newCalendars = this.state.store.calendars.map(cal =>
+            cal.id === calendar.id
+            ? calendar
+            : cal
+        );
+        this.setState({
+            store: {
+                users: this.state.store.users,
+                events: this.state.store.events,
+                calendars: newCalendars
+            }
+        })
     }
 
     handleAddEvent = (newEvent) => {
@@ -108,6 +123,7 @@ export default class App extends Component {
             clickedDay: this.state.clickedDay,
             addCalendar: this.handleAddCalendar,
             deleteCalendar: this.handleDeleteCalendar,
+            updateCalendar: this.handleUpdateCalendar,
             addEvent: this.handleAddEvent,
             addUser: this.handleAddUser,
             addCurrentUser: this.handleAddCurrentUser,
@@ -140,6 +156,10 @@ export default class App extends Component {
                         <Route
                             path='/:eventId/event'
                             component={Event}
+                        />
+                        <Route
+                            path='/:userId/edit-calendar'
+                            component={EditCalendarName}
                         />
                     </Switch>
                 </main>

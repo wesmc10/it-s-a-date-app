@@ -50,8 +50,8 @@ export default class Event extends Component {
                         </section>
                     : ''
                 }
-                <section className="Event_edit_button">
-                    <button type="button">
+                <section className="Event_buttons">
+                    <button type="button" className="Event_edit_button">
                         Edit Event
                     </button>
                     <button type="reset" onClick={this.onClickBack}>

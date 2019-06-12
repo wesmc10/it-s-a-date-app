@@ -8,6 +8,8 @@ export default class LogOut extends Component {
 
     handleLogOutClick = () => {
         this.context.addClickedDay('');
+        this.context.addCurrentCalendar({});
+        this.context.addCurrentUser({});
     }
 
     render() {
