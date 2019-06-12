@@ -1,0 +1,11 @@
+.Modal_hide {
+    display: none;
+}
+
+.Modal_display {
+    display: block;
+}
+
+.Events_for_this_day {
+    display: block;
+}

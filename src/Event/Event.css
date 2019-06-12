@@ -11,6 +11,10 @@
     margin: 0 15px 0 15px;
 }
 
+.location_description {
+    text-align: center;
+}
+
 .Event_edit_button {
     margin: 20px 0 25px 0;
     text-align: center;

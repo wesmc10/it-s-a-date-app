@@ -22,7 +22,8 @@ export default class App extends Component {
     state = {
         store: STORE,
         currentUser: {},
-        currentCalendar: {}
+        currentCalendar: {},
+        clickedDay: ''
     };
 
     handleAddCalendar = (newCalendar) => {
@@ -76,6 +77,12 @@ export default class App extends Component {
         });
     }
 
+    handleAddClickedDay = (dayId) => {
+        this.setState({
+            clickedDay: dayId
+        });
+    }
+
     render() {
 
         const contextValue = {
@@ -84,11 +91,13 @@ export default class App extends Component {
             users: this.state.store.users,
             currentUser: this.state.currentUser,
             currentCalendar: this.state.currentCalendar,
+            clickedDay: this.state.clickedDay,
             addCalendar: this.handleAddCalendar,
             addEvent: this.handleAddEvent,
             addUser: this.handleAddUser,
             addCurrentUser: this.handleAddCurrentUser,
-            addCurrentCalendar: this.handleAddCurrentCalendar
+            addCurrentCalendar: this.handleAddCurrentCalendar,
+            addClickedDay: this.handleAddClickedDay
         };
 
         return (
@@ -114,7 +123,7 @@ export default class App extends Component {
                             component={Calendar}
                         />
                         <Route
-                            path='/:userId/event'
+                            path='/:eventId/event'
                             component={Event}
                         />
                     </Switch>

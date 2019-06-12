@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './LogOut.css';
+import ItsADateContext from '../ItsADateContext';
 
 export default class LogOut extends Component {
+    static contextType = ItsADateContext;
 
     handleLogOutClick = () => {
-        console.log('logging out');
+        this.context.addClickedDay('');
     }
 
     render() {

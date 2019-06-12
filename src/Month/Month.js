@@ -19,7 +19,9 @@ export default function Month(props) {
             </div>
             <div className="Day_dates">
                 <MonthDateSection
+                    history={props.history}
                     currentMonth={props.currentMonth}
+                    showModal={props.showModal}
                 />
             </div>
         </div>

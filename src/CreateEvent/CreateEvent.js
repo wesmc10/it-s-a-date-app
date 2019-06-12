@@ -22,6 +22,7 @@ export default class CreateEvent extends Component {
         
         const { name, description, time, location, other } = this.state;
         const calendarId = this.context.currentCalendar.id;
+        const dayId = this.context.clickedDay;
 
         const id = uuid();
         const newEvent = {
@@ -31,11 +32,13 @@ export default class CreateEvent extends Component {
             time,
             location,
             calendarId,
+            dayId,
             other
         };
 
         this.context.addEvent(newEvent);
         this.props.history.push(`/${this.props.match.params.userId}/calendar`);
+        this.context.addClickedDay('');
     }
 
     handleNameChange = (e) => {
@@ -70,6 +73,7 @@ export default class CreateEvent extends Component {
 
     handleClickCancel = () => {
         this.props.history.goBack();
+        this.context.addClickedDay('');
     }
 
     render() {

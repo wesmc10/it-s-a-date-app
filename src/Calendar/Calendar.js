@@ -4,11 +4,13 @@ import Month from '../Month/Month';
 import dateFns from 'date-fns';
 import './Calendar.css';
 import ItsADateContext from '../ItsADateContext';
+import ViewEventsModal from '../ViewEventsModal/ViewEventsModal';
 
 export default class Calendar extends Component {
 
     state = {
-        currentMonth: new Date()
+        currentMonth: new Date(),
+        showModal: false
     };
 
     static contextType = ItsADateContext;
@@ -32,6 +34,18 @@ export default class Calendar extends Component {
         });
     }
 
+    handleShowModal = () => {
+        this.setState({
+            showModal: true
+        });
+    }
+
+    handleHideModal = () => {
+        this.setState({
+            showModal: false
+        });
+    }
+
     render() {
         return (
             <div className="Calendar_view">
@@ -40,11 +54,19 @@ export default class Calendar extends Component {
                 </header>
                 <section className="Calendar_view_calendar">
                     <Month 
+                        {...this.props}
                         prevMonth={this.handlePreviousMonth}
                         nextMonth={this.handleNextMonth}
                         currentMonth={this.state.currentMonth}
+                        showModal={this.handleShowModal}
                     />
                 </section>
+                <div className="View_events_modal">
+                    <ViewEventsModal
+                        show={this.state.showModal}
+                        hideModal={this.handleHideModal}
+                    />
+                </div>
             </div>
         )
     }

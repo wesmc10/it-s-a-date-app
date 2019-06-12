@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import dateFns from 'date-fns';
+import Day from '../Day/Day';
 import './MonthDateSection.css';
 import ItsADateContext from '../ItsADateContext';
 
@@ -8,6 +9,7 @@ export default class MonthDateSection extends Component {
     static contextType = ItsADateContext;
 
     render() {
+
         const today = new Date();
         const firstDayOfMonth = dateFns.startOfMonth(this.props.currentMonth);
         const lastDayOfMonth = dateFns.endOfMonth(this.props.currentMonth);
@@ -21,16 +23,19 @@ export default class MonthDateSection extends Component {
         while (day <= lastDayOnTheCalendar) {
             for (let i = 0; i < 7; i++) {
                 daysOfTheMonth.push(
-                    <Link to={`/${this.context.currentUser.id}/create-event`} key={i}>
-                        <div className={`day_date_column ${!dateFns.isSameMonth(day, firstDayOfMonth)
+                    /*<Link to={`/${this.context.currentUser.id}/create-event`} key={dateFns.format(day, 'MM DD YYYY')}>*/
+                        <Day className={`day_date_column ${!dateFns.isSameMonth(day, firstDayOfMonth)
                             ? 'faded' 
                             : dateFns.isSameDay(day, today)
-                                ? 'selected' 
+                                ? 'highlighted' 
                                 : ''}`}
-                        >
-                            {dateFns.format(day, 'D')}
-                        </div> 
-                    </Link>           
+                            day={day}
+                            id={dateFns.format(day, 'MM DD YYYY')}
+                            showModal={this.props.showModal}
+                            history={this.props.history}
+                            key={dateFns.format(day, 'MM DD YYYY')}
+                        />
+                    /*</Link>   */        
                 );
                 day = dateFns.addDays(day, 1);
             }
