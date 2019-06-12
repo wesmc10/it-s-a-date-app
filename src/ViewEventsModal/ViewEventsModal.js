@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import dateFns from 'date-fns';
 import './ViewEventsModal.css';
 import ItsADateContext from '../ItsADateContext';
 

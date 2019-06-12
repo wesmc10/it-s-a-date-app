@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import LogOut from '../LogOut/LogOut';
-import dateFns from 'date-fns';
 import './CreateEvent.css';
 import ItsADateContext from '../ItsADateContext';
 import uuid from 'uuid';
@@ -124,7 +123,7 @@ export default class CreateEvent extends Component {
                             </label>
                             <input
                                 id="Create_event_time"
-                                type="time"
+                                type="text"
                                 name="Create_event_time"
                                 required
                                 onChange={this.handleTimeChange}

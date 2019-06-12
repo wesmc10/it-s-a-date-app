@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import LogOut from '../LogOut/LogOut';
-import dateFns from 'date-fns';
 import './Event.css';
 import ItsADateContext from '../ItsADateContext';
 
@@ -49,7 +48,7 @@ export default class Event extends Component {
                 <section className="Event_view_time">
                     <h2 className="section_tag">Time</h2>
                     <p className="section_time">
-                        {dateFns.format(currentEvent.time, 'hh:mm A')}
+                        {currentEvent.time}
                     </p>
                 </section>
                 <section className="Event_view_location">

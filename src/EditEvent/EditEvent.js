@@ -24,7 +24,7 @@ export default class EditEvent extends Component {
         this.setState({
             name: currentEvent.name,
             description: currentEvent.description,
-            time: dateFns.format(currentEvent.time, 'HH:mm'),
+            time: currentEvent.time,
             location: currentEvent.location,
             other: currentEvent.other
         });
@@ -136,7 +136,7 @@ export default class EditEvent extends Component {
                             </label>
                             <input
                                 id="Edit_event_time"
-                                type="time"
+                                type="text"
                                 name="Edit_event_time"
                                 required
                                 value={time}

@@ -55,7 +55,7 @@ export default {
       {
         "id": "cbc787a0-ffaf-11e8-8eb2-f2801f1b9fe2",
         "name": "Dogs",
-        "time": "2019-06-03T00:00:00.000Z",
+        "time": "07:30 PM",
         "calendarId": "b0715efe-ffaf-11e8-8eb2-f2801f1b9fd1",
         "description": "Corporis accusamus placeat quas non voluptas. Harum fugit molestias qui. Velit ex animi reiciendis quasi. Suscipit totam delectus ut voluptas aut qui rerum. Non veniam eius molestiae rerum quam.\n \rUnde qui aperiam praesentium alias. Aut temporibus id quidem recusandae voluptatem ut eum. Consequatur asperiores et in quisquam corporis maxime dolorem soluta. Et officiis id est quia sunt qui iste reiciendis saepe. Ut aut doloribus minus non nisi vel corporis. Veritatis mollitia et molestias voluptas neque aspernatur reprehenderit.\n \rMaxime aut reprehenderit mollitia quia eos sit fugiat exercitationem. Minima dolore soluta. Quidem fuga ut sit voluptas nihil sunt aliquam dignissimos. Ex autem nemo quisquam voluptas consequuntur et necessitatibus minima velit. Consequatur quia quis tempora minima. Aut qui dolor et dignissimos ut repellat quas ad.",
         "location": "5774 Here Drive",
@@ -65,7 +65,7 @@ export default {
       {
         "id": "cbt787a0-ffaf-11e8-8eb2-f2801f1c9fd1",
         "name": "Party",
-        "time": "2019-05-10T00:00:00.000Z",
+        "time": "09:00 PM",
         "calendarId": "b07161a6-ffaf-11e8-8eb2-f2801f1b9fd1",
         "description": "Corporis accusamus placeat quas non voluptas. Harum fugit molestias qui. Velit ex animi reiciendis quasi. Suscipit totam delectus ut voluptas aut qui rerum. Non veniam eius molestiae rerum quam.\n \rUnde qui aperiam praesentium alias. Aut temporibus id quidem recusandae voluptatem ut eum. Consequatur asperiores et in quisquam corporis maxime dolorem soluta. Et officiis id est quia sunt qui iste reiciendis saepe. Ut aut doloribus minus non nisi vel corporis. Veritatis mollitia et molestias voluptas neque aspernatur reprehenderit.\n \rMaxime aut reprehenderit mollitia quia eos sit fugiat exercitationem. Minima dolore soluta. Quidem fuga ut sit voluptas nihil sunt aliquam dignissimos. Ex autem nemo quisquam voluptas consequuntur et necessitatibus minima velit. Consequatur quia quis tempora minima. Aut qui dolor et dignissimos ut repellat quas ad.",
         "location": "28490 Party Lane",
@@ -74,7 +74,7 @@ export default {
       {
         "id": "cbc787a0-ffaf-11e8-8eb2-f4801f1b9fd1",
         "name": "Work",
-        "time": "2019-06-08T00:00:00.000Z",
+        "time": "08:00 AM",
         "calendarId": "b07162f0-ffaf-11e8-8eb2-f2801f1b9fd1",
         "description": "Corporis accusamus placeat quas non voluptas. Harum fugit molestias qui. Velit ex animi reiciendis quasi. Suscipit totam delectus ut voluptas aut qui rerum. Non veniam eius molestiae rerum quam.\n \rUnde qui aperiam praesentium alias. Aut temporibus id quidem recusandae voluptatem ut eum. Consequatur asperiores et in quisquam corporis maxime dolorem soluta. Et officiis id est quia sunt qui iste reiciendis saepe. Ut aut doloribus minus non nisi vel corporis. Veritatis mollitia et molestias voluptas neque aspernatur reprehenderit.\n \rMaxime aut reprehenderit mollitia quia eos sit fugiat exercitationem. Minima dolore soluta. Quidem fuga ut sit voluptas nihil sunt aliquam dignissimos. Ex autem nemo quisquam voluptas consequuntur et necessitatibus minima velit. Consequatur quia quis tempora minima. Aut qui dolor et dignissimos ut repellat quas ad.",
         "location": "90385 Hey Drive",
@@ -83,7 +83,7 @@ export default {
       {
         "id": "cbc781a0-ffaf-11e8-8eb2-f2801f1b9fd1",
         "name": "Gone",
-        "time": "2019-04-03T00:00:00.000Z",
+        "time": "05:00 PM",
         "calendarId": "b07112f0-ffaf-11e8-8eb2-f2801f1b9fd1",
         "description": "Corporis accusamus placeat quas non voluptas. Harum fugit molestias qui. Velit ex animi reiciendis quasi. Suscipit totam delectus ut voluptas aut qui rerum. Non veniam eius molestiae rerum quam.\n \rUnde qui aperiam praesentium alias. Aut temporibus id quidem recusandae voluptatem ut eum. Consequatur asperiores et in quisquam corporis maxime dolorem soluta. Et officiis id est quia sunt qui iste reiciendis saepe. Ut aut doloribus minus non nisi vel corporis. Veritatis mollitia et molestias voluptas neque aspernatur reprehenderit.\n \rMaxime aut reprehenderit mollitia quia eos sit fugiat exercitationem. Minima dolore soluta. Quidem fuga ut sit voluptas nihil sunt aliquam dignissimos. Ex autem nemo quisquam voluptas consequuntur et necessitatibus minima velit. Consequatur quia quis tempora minima. Aut qui dolor et dignissimos ut repellat quas ad.",
         "location": "2474 Laurinda Drive",
@@ -92,7 +92,7 @@ export default {
       {
         "id": "cbc787a0-ffaf-11e8-8eb2-f2801f1b9fd1",
         "name": "Dude",
-        "time": "2019-06-20T00:00:00.000Z",
+        "time": "08:00 PM",
         "calendarId": "b07161a6-ffaf-11e8-8eb2-f2801f1b9fd1",
         "description": "Corporis accusamus placeat quas non voluptas. Harum fugit molestias qui. Velit ex animi reiciendis quasi. Suscipit totam delectus ut voluptas aut qui rerum. Non veniam eius molestiae rerum quam.\n \rUnde qui aperiam praesentium alias. Aut temporibus id quidem recusandae voluptatem ut eum. Consequatur asperiores et in quisquam corporis maxime dolorem soluta. Et officiis id est quia sunt qui iste reiciendis saepe. Ut aut doloribus minus non nisi vel corporis. Veritatis mollitia et molestias voluptas neque aspernatur reprehenderit.\n \rMaxime aut reprehenderit mollitia quia eos sit fugiat exercitationem. Minima dolore soluta. Quidem fuga ut sit voluptas nihil sunt aliquam dignissimos. Ex autem nemo quisquam voluptas consequuntur et necessitatibus minima velit. Consequatur quia quis tempora minima. Aut qui dolor et dignissimos ut repellat quas ad.",
         "location": "93845 Cake Drive",
@@ -101,7 +101,7 @@ export default {
       {
         "id": "cbc787a0-ffaf-11z8-8eb2-f2801f1b9fd1",
         "name": "Hey",
-        "time": "2019-06-22T00:00:00.000Z",
+        "time": "12:15 PM",
         "calendarId": "b0715efe-ffaf-11e8-8eb2-f2801f1b9fd1",
         "description": "Corporis accusamus placeat quas non voluptas. Harum fugit molestias qui. Velit ex animi reiciendis quasi. Suscipit totam delectus ut voluptas aut qui rerum. Non veniam eius molestiae rerum quam.\n \rUnde qui aperiam praesentium alias. Aut temporibus id quidem recusandae voluptatem ut eum. Consequatur asperiores et in quisquam corporis maxime dolorem soluta. Et officiis id est quia sunt qui iste reiciendis saepe. Ut aut doloribus minus non nisi vel corporis. Veritatis mollitia et molestias voluptas neque aspernatur reprehenderit.\n \rMaxime aut reprehenderit mollitia quia eos sit fugiat exercitationem. Minima dolore soluta. Quidem fuga ut sit voluptas nihil sunt aliquam dignissimos. Ex autem nemo quisquam voluptas consequuntur et necessitatibus minima velit. Consequatur quia quis tempora minima. Aut qui dolor et dignissimos ut repellat quas ad.",
         "location": "09384 Right Drive",
@@ -110,7 +110,7 @@ export default {
       {
         "id": "cbc787a0-ffaf-11e8-8eb2-c2801f1b9fd1",
         "name": "Wow",
-        "time": "2019-06-11T00:00:00.000Z",
+        "time": "10:45 AM",
         "calendarId": "b07161a6-ffaf-11e8-8eb2-f2801f1b9fd1",
         "description": "Corporis accusamus placeat quas non voluptas. Harum fugit molestias qui. Velit ex animi reiciendis quasi. Suscipit totam delectus ut voluptas aut qui rerum. Non veniam eius molestiae rerum quam.\n \rUnde qui aperiam praesentium alias. Aut temporibus id quidem recusandae voluptatem ut eum. Consequatur asperiores et in quisquam corporis maxime dolorem soluta. Et officiis id est quia sunt qui iste reiciendis saepe. Ut aut doloribus minus non nisi vel corporis. Veritatis mollitia et molestias voluptas neque aspernatur reprehenderit.\n \rMaxime aut reprehenderit mollitia quia eos sit fugiat exercitationem. Minima dolore soluta. Quidem fuga ut sit voluptas nihil sunt aliquam dignissimos. Ex autem nemo quisquam voluptas consequuntur et necessitatibus minima velit. Consequatur quia quis tempora minima. Aut qui dolor et dignissimos ut repellat quas ad.",
         "location": "8239 Drill Drive",
@@ -119,7 +119,7 @@ export default {
       {
         "id": "cbc787a0-ffaf-11e8-8eb2-f3801f1b9fd1",
         "name": "Fun",
-        "time": "2019-07-10T00:00:00.000Z",
+        "time": "06:30 PM",
         "calendarId": "b07162f0-ffaf-11e8-8eb2-f2801f1b9fd1",
         "description": "Corporis accusamus placeat quas non voluptas. Harum fugit molestias qui. Velit ex animi reiciendis quasi. Suscipit totam delectus ut voluptas aut qui rerum. Non veniam eius molestiae rerum quam.\n \rUnde qui aperiam praesentium alias. Aut temporibus id quidem recusandae voluptatem ut eum. Consequatur asperiores et in quisquam corporis maxime dolorem soluta. Et officiis id est quia sunt qui iste reiciendis saepe. Ut aut doloribus minus non nisi vel corporis. Veritatis mollitia et molestias voluptas neque aspernatur reprehenderit.\n \rMaxime aut reprehenderit mollitia quia eos sit fugiat exercitationem. Minima dolore soluta. Quidem fuga ut sit voluptas nihil sunt aliquam dignissimos. Ex autem nemo quisquam voluptas consequuntur et necessitatibus minima velit. Consequatur quia quis tempora minima. Aut qui dolor et dignissimos ut repellat quas ad.",
         "location": "0983 Can Drive",
@@ -128,7 +128,7 @@ export default {
       {
         "id": "cbc787a0-ffaf-77e8-8eb2-f2801f1b9fd1",
         "name": "Rangers",
-        "time": "2019-07-01T00:00:00.000Z",
+        "time": "07:05 PM",
         "calendarId": "b07112f0-ffaf-11e8-8eb2-f2801f1b9fd1",
         "description": "Corporis accusamus placeat quas non voluptas. Harum fugit molestias qui. Velit ex animi reiciendis quasi. Suscipit totam delectus ut voluptas aut qui rerum. Non veniam eius molestiae rerum quam.\n \rUnde qui aperiam praesentium alias. Aut temporibus id quidem recusandae voluptatem ut eum. Consequatur asperiores et in quisquam corporis maxime dolorem soluta. Et officiis id est quia sunt qui iste reiciendis saepe. Ut aut doloribus minus non nisi vel corporis. Veritatis mollitia et molestias voluptas neque aspernatur reprehenderit.\n \rMaxime aut reprehenderit mollitia quia eos sit fugiat exercitationem. Minima dolore soluta. Quidem fuga ut sit voluptas nihil sunt aliquam dignissimos. Ex autem nemo quisquam voluptas consequuntur et necessitatibus minima velit. Consequatur quia quis tempora minima. Aut qui dolor et dignissimos ut repellat quas ad.",
         "location": "27384 Finkle Drive",
@@ -137,7 +137,7 @@ export default {
       {
         "id": "cbc798a0-ffaf-11e8-8eb2-f2801f1b9fd1",
         "name": "Cowboys",
-        "time": "2019-06-30T00:00:00.000Z",
+        "time": "10:00 AM",
         "calendarId": "b0712efe-ffaf-11e8-8eb2-f2801g1b9fd1",
         "description": "Corporis accusamus placeat quas non voluptas. Harum fugit molestias qui. Velit ex animi reiciendis quasi. Suscipit totam delectus ut voluptas aut qui rerum. Non veniam eius molestiae rerum quam.\n \rUnde qui aperiam praesentium alias. Aut temporibus id quidem recusandae voluptatem ut eum. Consequatur asperiores et in quisquam corporis maxime dolorem soluta. Et officiis id est quia sunt qui iste reiciendis saepe. Ut aut doloribus minus non nisi vel corporis. Veritatis mollitia et molestias voluptas neque aspernatur reprehenderit.\n \rMaxime aut reprehenderit mollitia quia eos sit fugiat exercitationem. Minima dolore soluta. Quidem fuga ut sit voluptas nihil sunt aliquam dignissimos. Ex autem nemo quisquam voluptas consequuntur et necessitatibus minima velit. Consequatur quia quis tempora minima. Aut qui dolor et dignissimos ut repellat quas ad.",
         "location": "1273 Wes Drive",
@@ -146,7 +146,7 @@ export default {
       {
         "id": "cbc787a0-ffaf-11e8-8eb2-f2801f1b2fd1",
         "name": "Mavs",
-        "time": "2019-06-01T00:00:00.000Z",
+        "time": "205:35 PM",
         "calendarId": "b07161a6-ffaf-11e8-8eb2-f2801f1b9fd1",
         "description": "Corporis accusamus placeat quas non voluptas. Harum fugit molestias qui. Velit ex animi reiciendis quasi. Suscipit totam delectus ut voluptas aut qui rerum. Non veniam eius molestiae rerum quam.\n \rUnde qui aperiam praesentium alias. Aut temporibus id quidem recusandae voluptatem ut eum. Consequatur asperiores et in quisquam corporis maxime dolorem soluta. Et officiis id est quia sunt qui iste reiciendis saepe. Ut aut doloribus minus non nisi vel corporis. Veritatis mollitia et molestias voluptas neque aspernatur reprehenderit.\n \rMaxime aut reprehenderit mollitia quia eos sit fugiat exercitationem. Minima dolore soluta. Quidem fuga ut sit voluptas nihil sunt aliquam dignissimos. Ex autem nemo quisquam voluptas consequuntur et necessitatibus minima velit. Consequatur quia quis tempora minima. Aut qui dolor et dignissimos ut repellat quas ad.",
         "location": "8734 Eugene Drive",
@@ -155,7 +155,7 @@ export default {
       {
         "id": "cbc787a0-ffaf-11e8-8eb2-f2801s1b9fd1",
         "name": "Love",
-        "time": "2019-06-02T00:00:00.000Z",
+        "time": "11:00 PM",
         "calendarId": "b0715efe-ffaf-11e8-8eb2-f2801f1b9fd1",
         "description": "Corporis accusamus placeat quas non voluptas. Harum fugit molestias qui. Velit ex animi reiciendis quasi. Suscipit totam delectus ut voluptas aut qui rerum. Non veniam eius molestiae rerum quam.\n \rUnde qui aperiam praesentium alias. Aut temporibus id quidem recusandae voluptatem ut eum. Consequatur asperiores et in quisquam corporis maxime dolorem soluta. Et officiis id est quia sunt qui iste reiciendis saepe. Ut aut doloribus minus non nisi vel corporis. Veritatis mollitia et molestias voluptas neque aspernatur reprehenderit.\n \rMaxime aut reprehenderit mollitia quia eos sit fugiat exercitationem. Minima dolore soluta. Quidem fuga ut sit voluptas nihil sunt aliquam dignissimos. Ex autem nemo quisquam voluptas consequuntur et necessitatibus minima velit. Consequatur quia quis tempora minima. Aut qui dolor et dignissimos ut repellat quas ad.",
         "location": "2894 Quake Drive",
@@ -164,7 +164,7 @@ export default {
       {
         "id": "cbc787a0-ffaf-11e8-8eb2-f1801f1b9fd1",
         "name": "Like",
-        "time": "2019-06-11T00:00:00.000Z",
+        "time": "07:15 PM",
         "calendarId": "b0712efe-ffaf-11e8-8eb2-f2801g1b9fd1",
         "description": "Corporis accusamus placeat quas non voluptas. Harum fugit molestias qui. Velit ex animi reiciendis quasi. Suscipit totam delectus ut voluptas aut qui rerum. Non veniam eius molestiae rerum quam.\n \rUnde qui aperiam praesentium alias. Aut temporibus id quidem recusandae voluptatem ut eum. Consequatur asperiores et in quisquam corporis maxime dolorem soluta. Et officiis id est quia sunt qui iste reiciendis saepe. Ut aut doloribus minus non nisi vel corporis. Veritatis mollitia et molestias voluptas neque aspernatur reprehenderit.\n \rMaxime aut reprehenderit mollitia quia eos sit fugiat exercitationem. Minima dolore soluta. Quidem fuga ut sit voluptas nihil sunt aliquam dignissimos. Ex autem nemo quisquam voluptas consequuntur et necessitatibus minima velit. Consequatur quia quis tempora minima. Aut qui dolor et dignissimos ut repellat quas ad.",
         "location": "7343 Hilltop Drive",
@@ -173,7 +173,7 @@ export default {
       {
         "id": "ayz787a0-ffaf-11e8-8eb2-f2801f1b9fd1",
         "name": "Heaven",
-        "time": "2019-06-21T00:00:00.000Z",
+        "time": "12:00 AM",
         "calendarId": "b07112f0-ffaf-11e8-8eb2-f2801f1b9fd1",
         "description": "Corporis accusamus placeat quas non voluptas. Harum fugit molestias qui. Velit ex animi reiciendis quasi. Suscipit totam delectus ut voluptas aut qui rerum. Non veniam eius molestiae rerum quam.\n \rUnde qui aperiam praesentium alias. Aut temporibus id quidem recusandae voluptatem ut eum. Consequatur asperiores et in quisquam corporis maxime dolorem soluta. Et officiis id est quia sunt qui iste reiciendis saepe. Ut aut doloribus minus non nisi vel corporis. Veritatis mollitia et molestias voluptas neque aspernatur reprehenderit.\n \rMaxime aut reprehenderit mollitia quia eos sit fugiat exercitationem. Minima dolore soluta. Quidem fuga ut sit voluptas nihil sunt aliquam dignissimos. Ex autem nemo quisquam voluptas consequuntur et necessitatibus minima velit. Consequatur quia quis tempora minima. Aut qui dolor et dignissimos ut repellat quas ad.",
         "location": "3485 Little Drive",
