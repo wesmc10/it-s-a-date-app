@@ -15,11 +15,7 @@
     text-align: center;
 }
 
-.Event_buttons {
+.Event_button {
     margin: 20px 0 25px 0;
     text-align: center;
-}
-
-.Event_edit_button {
-    margin-right: 8px;
 }

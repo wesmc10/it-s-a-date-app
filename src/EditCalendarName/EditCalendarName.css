@@ -1,0 +1,24 @@
+.Edit_calendar_title {
+    font-size: 36px;
+    text-align: center;
+}
+
+.Edit_calendar_label, #Edit_calendar_name {
+    display: block;
+}
+
+.Edit_calendar_label {
+    margin-bottom: 5px;
+}
+
+#Edit_calendar_name {
+    margin-bottom: 10px;
+}
+
+.Edit_calendar_form {
+    margin-left: 15px;
+}
+
+.Edit_calendar_submit_button {
+    margin-right: 8px;
+}

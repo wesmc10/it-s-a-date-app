@@ -20,15 +20,15 @@ export default class ViewEventsModal extends Component {
                         X
                     </button>
                     {events.filter(event => event.dayId === clickedDay).map(event =>
-                        <div className="Events_for_this_day" key={event.id}>
+                        <div className="Events_for_this_day"  key={event.id}>
                             <Link to={`/${event.id}/event`}>
-                                {`${event.name} at ${dateFns.format(event.time, 'h mm A')}`}
+                                {`Event: ${event.name}`}
                             </Link>
                         </div>
                     )}
                     <div className="Create_event_link">
                         <Link to={`/${this.context.currentUser.id}/create-event`}>
-                            Create an Event
+                            Create a New Event
                         </Link>
                     </div>
                 </section>

@@ -9,6 +9,7 @@ import STORE from '../dummy-store';
 import './App.css';
 import Calendar from '../Calendar/Calendar';
 import EditCalendarName from '../EditCalendarName/EditCalendarName';
+import EditEvent from '../EditEvent/EditEvent';
 
 export default class App extends Component {
 
@@ -18,7 +19,7 @@ export default class App extends Component {
             events: [],
             users: []
         }
-    }
+    };
 
     state = {
         store: STORE,
@@ -53,11 +54,11 @@ export default class App extends Component {
         });
     }
 
-    handleUpdateCalendar = (calendar) => {
-        const newCalendars = this.state.store.calendars.map(cal =>
-            cal.id === calendar.id
-            ? calendar
-            : cal
+    handleUpdateCalendar = (updatedCalendar) => {
+        const newCalendars = this.state.store.calendars.map(calendar =>
+            calendar.id === updatedCalendar.id
+            ? updatedCalendar
+            : calendar
         );
         this.setState({
             store: {
@@ -77,6 +78,34 @@ export default class App extends Component {
                     ...this.state.store.events,
                     newEvent
                 ]
+            }
+        });
+    }
+
+    handleDeleteEvent = (eventId) => {
+        const newEvents = this.state.store.events.filter(event =>
+            event.id !== eventId  
+        );
+        this.setState({
+            store: {
+                calendars: this.state.store.calendars,
+                users: this.state.store.users,
+                events: newEvents
+            }
+        });
+    }
+
+    handleUpdateEvent = (updatedEvent) => {
+        const newEvents = this.state.store.events.map(event =>
+            event.id === updatedEvent.id
+            ? updatedEvent
+            : event    
+        );
+        this.setState({
+            store: {
+                calendars: this.state.store.calendars,
+                users: this.state.store.users,
+                events: newEvents
             }
         });
     }
@@ -125,6 +154,8 @@ export default class App extends Component {
             deleteCalendar: this.handleDeleteCalendar,
             updateCalendar: this.handleUpdateCalendar,
             addEvent: this.handleAddEvent,
+            deleteEvent: this.handleDeleteEvent,
+            updateEvent: this.handleUpdateEvent,
             addUser: this.handleAddUser,
             addCurrentUser: this.handleAddCurrentUser,
             addCurrentCalendar: this.handleAddCurrentCalendar,
@@ -160,6 +191,10 @@ export default class App extends Component {
                         <Route
                             path='/:userId/edit-calendar'
                             component={EditCalendarName}
+                        />
+                        <Route
+                            path='/:eventId/edit-event'
+                            component={EditEvent}
                         />
                     </Switch>
                 </main>

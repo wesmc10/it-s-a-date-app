@@ -10,6 +10,7 @@ const ItsADateContext = React.createContext({
     addCalendar: () => {},
     deleteCalendar: () => {},
     addEvent: () => {},
+    updateEvent: () => {},
     addUser: () => {},
     addCurrentUser: () => {},
     addCurrentCalendar: () => {},

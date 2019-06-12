@@ -41,37 +41,44 @@ export default class EditCalendarName extends Component {
         this.props.history.push(`/${currentCalendar.userId}/calendar`);
     }
 
+    handleClickCancel = () => {
+        this.props.history.goBack();
+    }
+
     render() {
         const { name, error } = this.state;
 
         return (
-            <div className="Create_calendar">
-                <header className="Create_calendar_header">
+            <div className="Edit_calendar">
+                <header className="Edit_calendar_header">
                     <LogOut />
                 </header>
                 <section>
-                    <h1 className="Create_calendar_title">Edit Calendar</h1>
+                    <h1 className="Edit_calendar_title">Edit Calendar</h1>
                 </section>
                 <section>
-                    <form className="Create_calendar_form" onSubmit={this.handleSubmit}>
+                    <form className="Edit_calendar_form" onSubmit={this.handleSubmit}>
                         <div role="alert">
                             {error && <p className="red">{error}</p>}
                         </div>
-                        <div className="Create_calendar_form_name">
-                            <label htmlFor="Create_calendar_name" className="Create_calendar_label">
+                        <div className="Edit_calendar_form_name">
+                            <label htmlFor="Edit_calendar_name" className="Edit_calendar_label">
                                 Calendar Name
                             </label>
                             <input
-                                id="Create_calendar_name"
+                                id="Edit_calendar_name"
                                 type="text"
-                                name="Create_calendar_name"
+                                name="Edit_calendar_name"
                                 required
                                 value={name}
                                 onChange={this.handleCalendarNameChange}
                             />
                         </div>
-                        <button type="submit">
+                        <button type="submit" className="Edit_calendar_submit_button">
                             Submit
+                        </button>
+                        <button type="button" onClick={this.handleClickCancel}>
+                            Cancel
                         </button>
                     </form>
                 </section>

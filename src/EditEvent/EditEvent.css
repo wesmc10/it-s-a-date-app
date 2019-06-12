@@ -1,0 +1,32 @@
+.Edit_event_title {
+    font-size: 36px;
+    text-align: center;
+}
+
+.Edit_event_name_label, #Edit_event_name,
+.Edit_event_description_label, #Edit_event_description,
+.Edit_event_time_label, #Edit_event_time,
+.Edit_event_location_label, #Edit_event_location,
+.Edit_event_other_label, #Edit_event_other {
+    display: block;
+}
+
+.Edit_event_form {
+    margin-left: 15px;
+}
+
+.Edit_event_name_label, .Edit_event_description_label,
+.Edit_event_time_label, .Edit_event_location_label,
+.Edit_event_other_label {
+    margin-bottom: 5px;
+}
+
+#Edit_event_name, #Edit_event_description,
+#Edit_event_time, #Edit_event_location,
+#Edit_event_other {
+    margin-bottom: 10px;
+}
+
+.Edit_event_submit {
+    margin-right: 8px;
+}
