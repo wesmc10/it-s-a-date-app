@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import LogOut from '../LogOut/LogOut';
-import dateFns from 'date-fns';
 import './EditEvent.css';
 import ItsADateContext from '../ItsADateContext';
 
@@ -136,7 +135,7 @@ export default class EditEvent extends Component {
                             </label>
                             <input
                                 id="Edit_event_time"
-                                type="text"
+                                type="time"
                                 name="Edit_event_time"
                                 required
                                 value={time}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import LogOut from '../LogOut/LogOut';
+import convertTime from 'convert-time';
 import './Event.css';
 import ItsADateContext from '../ItsADateContext';
 
@@ -48,7 +49,7 @@ export default class Event extends Component {
                 <section className="Event_view_time">
                     <h2 className="section_tag">Time</h2>
                     <p className="section_time">
-                        {currentEvent.time}
+                        {convertTime(currentEvent.time, 'hh:MM A')}
                     </p>
                 </section>
                 <section className="Event_view_location">

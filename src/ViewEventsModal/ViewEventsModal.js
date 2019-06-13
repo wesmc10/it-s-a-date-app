@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import convertTime from 'convert-time';
 import './ViewEventsModal.css';
 import ItsADateContext from '../ItsADateContext';
 
@@ -21,7 +22,7 @@ export default class ViewEventsModal extends Component {
                     {events.filter(event => event.dayId === clickedDay).map(event =>
                         <div className="Events_for_this_day"  key={event.id}>
                             <Link to={`/${event.id}/event`}>
-                                {`Event: ${event.name}`}
+                                {`${event.name} at ${convertTime(event.time, 'hh:MM A')}`}
                             </Link>
                         </div>
                     )}

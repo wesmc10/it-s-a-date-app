@@ -123,7 +123,7 @@ export default class CreateEvent extends Component {
                             </label>
                             <input
                                 id="Create_event_time"
-                                type="text"
+                                type="time"
                                 name="Create_event_time"
                                 required
                                 onChange={this.handleTimeChange}
