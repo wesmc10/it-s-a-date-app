@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import ItsADateContext from '../ItsADateContext';
+import config from '../config';
+import TokenService from '../token-service';
 import './LogIn.css';
 
 export default class LogIn extends Component {
@@ -14,9 +16,41 @@ export default class LogIn extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        this.setState({
+            error: null
+        });
         const { userName, password } = this.state;
 
-        const user = this.context.users.find(user => user.userName === userName);
+        fetch(`${config.API_ENDPOINT}/auth/login`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                user_name: userName,
+                password
+            })
+        })
+        .then(res =>
+            (!res.ok)
+                ? res.json().then(e => Promise.reject(e))
+                : res.json()
+        )
+        .then(res => {
+            this.setState({
+                userName: '',
+                password: ''
+            });
+            TokenService.saveAuthToken(res.authToken);
+        })
+        .catch(res => {
+            this.setState({
+                error: res.error
+            });
+        })
+             
+
+        /*const user = this.context.users.find(user => user.userName === userName);
         if (user === undefined) {
             console.log('Username is incorrect');
         } else {
@@ -30,7 +64,7 @@ export default class LogIn extends Component {
                     this.props.history.push(`/${user.id}/create-calendar`);
                 }
             }
-        }
+        }*/
     }
 
     handleChangeUserName = (e) => {
