@@ -2,7 +2,7 @@ import React from 'react';
 
 const ItsADateContext = React.createContext({
     calendars: [],
-    events: [],
+    userEvents: [],
     users: [],
     currentUser: {},
     currentCalendar: {},
@@ -10,6 +10,7 @@ const ItsADateContext = React.createContext({
     addCalendar: () => {},
     deleteCalendar: () => {},
     addEvent: () => {},
+    addUserEvents: () => {},
     updateEvent: () => {},
     addUser: () => {},
     addCurrentUser: () => {},

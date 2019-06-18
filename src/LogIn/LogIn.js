@@ -42,29 +42,21 @@ export default class LogIn extends Component {
                 password: ''
             });
             TokenService.saveAuthToken(res.authToken);
+            this.context.addCurrentUser(res.dbUser);
+            this.context.addUserEvents(res.dbEvents);
+            console.log(res.dbEvents);
+            if (!!res.dbCalendar) {
+                this.context.addCurrentCalendar(res.dbCalendar);
+                //this.props.history.push(`/${res.dbCalendar.id}/calendar`);
+            } /*else {
+                this.props.history.push(`/${res.dbUser.id}/create-calendar`);
+            }*/
         })
         .catch(res => {
             this.setState({
                 error: res.error
             });
         })
-             
-
-        /*const user = this.context.users.find(user => user.userName === userName);
-        if (user === undefined) {
-            console.log('Username is incorrect');
-        } else {
-            if (user.password !== password) {
-                console.log('Password is incorrect');
-            } else {
-                this.context.addCurrentUser(user);
-                if (this.context.calendars.find(calendar => calendar.userId === user.id)) {
-                    this.props.history.push(`/${user.id}/calendar`);
-                } else {
-                    this.props.history.push(`/${user.id}/create-calendar`);
-                }
-            }
-        }*/
     }
 
     handleChangeUserName = (e) => {

@@ -5,7 +5,6 @@ import ItsADateContext from '../ItsADateContext';
 import CreateCalendar from '../CreateCalendar/CreateCalendar';
 import CreateEvent from '../CreateEvent/CreateEvent';
 import Event from '../Event/Event';
-import STORE from '../dummy-store';
 import './App.css';
 import Calendar from '../Calendar/Calendar';
 import EditCalendarName from '../EditCalendarName/EditCalendarName';
@@ -13,16 +12,10 @@ import EditEvent from '../EditEvent/EditEvent';
 
 export default class App extends Component {
 
-    static defaultProps = {
-        store: {
-            calendars: [],
-            events: [],
-            users: []
-        }
-    };
-
     state = {
-        store: STORE,
+        users: [],
+        calendars: [],
+        userEvents: [],
         currentUser: {},
         currentCalendar: {},
         clickedDay: ''
@@ -30,102 +23,86 @@ export default class App extends Component {
 
     handleAddCalendar = (newCalendar) => {
         this.setState({
-            store: {
-                users: this.state.store.users,
-                events: this.state.store.events,
-                calendars: [
-                    ...this.state.store.calendars,
-                    newCalendar
-                ]
-            }
-        });   
+            calendars: [
+                ...this.state.calendars,
+                newCalendar
+            ]
+        });
     }
 
     handleDeleteCalendar = (calendarId) => {
-        const newCalendars = this.state.store.calendars.filter(calendar =>
+        const newCalendars = this.state.calendars.filter(calendar =>
             calendar.id !== calendarId
         );
         this.setState({
-            store: {
-                users: this.state.store.users,
-                events: this.state.store.events,
-                calendars: newCalendars
-            }
+            calendars: newCalendars
         });
     }
 
     handleUpdateCalendar = (updatedCalendar) => {
-        const newCalendars = this.state.store.calendars.map(calendar =>
+        const newCalendars = this.state.calendars.map(calendar =>
             calendar.id === updatedCalendar.id
             ? updatedCalendar
             : calendar
         );
         this.setState({
-            store: {
-                users: this.state.store.users,
-                events: this.state.store.events,
-                calendars: newCalendars
-            }
-        })
+            calendars: newCalendars
+        });
     }
 
     handleAddEvent = (newEvent) => {
         this.setState({
-            store: {
-                calendars: this.state.store.calendars,
-                users: this.state.store.users,
-                events: [
-                    ...this.state.store.events,
-                    newEvent
-                ]
-            }
+            userEvents: [
+                ...this.state.userEvents,
+                newEvent
+            ]
+        });
+    }
+
+    handleAddUserEvents = (events) => {
+        console.log('adding events');
+        this.setState({
+            userEvents: events
         });
     }
 
     handleDeleteEvent = (eventId) => {
-        const newEvents = this.state.store.events.filter(event =>
+        const newEvents = this.state.userEvents.filter(event =>
             event.id !== eventId  
         );
         this.setState({
-            store: {
-                calendars: this.state.store.calendars,
-                users: this.state.store.users,
-                events: newEvents
-            }
+            userEvents: newEvents
         });
     }
 
     handleUpdateEvent = (updatedEvent) => {
-        const newEvents = this.state.store.events.map(event =>
+        const newEvents = this.state.userEvents.map(event =>
             event.id === updatedEvent.id
             ? updatedEvent
             : event    
         );
         this.setState({
-            store: {
-                calendars: this.state.store.calendars,
-                users: this.state.store.users,
-                events: newEvents
-            }
+            userEvents: newEvents
         });
     }
 
     handleAddUser = (newUser) => {
         this.setState({
-            store: {
-                calendars: this.state.store.calendars,
-                events: this.state.store.events,
-                users: [
-                    ...this.state.store.users,
-                    newUser
-                ]
-            }
+            users: [
+                ...this.state.users,
+                newUser
+            ]
         });
     }
 
     handleAddCurrentUser = (user) => {
         this.setState({
-            currentUser: user
+            currentUser: {
+                id: user.id,
+                first_name: user.first_name,
+                last_name: user.last_name,
+                user_name: user.user_name
+            }
         });
     }
 
@@ -144,9 +121,9 @@ export default class App extends Component {
     render() {
 
         const contextValue = {
-            calendars: this.state.store.calendars,
-            events: this.state.store.events,
-            users: this.state.store.users,
+            calendars: this.state.calendars,
+            userEvents: this.state.events,
+            users: this.state.users,
             currentUser: this.state.currentUser,
             currentCalendar: this.state.currentCalendar,
             clickedDay: this.state.clickedDay,
@@ -154,6 +131,7 @@ export default class App extends Component {
             deleteCalendar: this.handleDeleteCalendar,
             updateCalendar: this.handleUpdateCalendar,
             addEvent: this.handleAddEvent,
+            addUserEvents: this.handleAddUserEvents,
             deleteEvent: this.handleDeleteEvent,
             updateEvent: this.handleUpdateEvent,
             addUser: this.handleAddUser,
@@ -181,7 +159,7 @@ export default class App extends Component {
                             component={CreateEvent}
                         />
                         <Route
-                            path='/:userId/calendar'
+                            path='/:calendarId/calendar'
                             component={Calendar}
                         />
                         <Route
@@ -189,7 +167,7 @@ export default class App extends Component {
                             component={Event}
                         />
                         <Route
-                            path='/:userId/edit-calendar'
+                            path='/:calendarId/edit-calendar'
                             component={EditCalendarName}
                         />
                         <Route

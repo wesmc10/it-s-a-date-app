@@ -6,6 +6,9 @@ const TokenService = {
     },
     clearAuthToken() {
         window.sessionStorage.removeItem(config.TOKEN_KEY);
+    },
+    getAuthToken() {
+        return window.sessionStorage.getItem(config.TOKEN_KEY);
     }
 }
 
