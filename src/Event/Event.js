@@ -4,6 +4,8 @@ import LogOut from '../LogOut/LogOut';
 import convertTime from 'convert-time';
 import './Event.css';
 import ItsADateContext from '../ItsADateContext';
+import config from '../config';
+import TokenService from '../token-service';
 
 export default class Event extends Component {
     static contextType = ItsADateContext;
@@ -12,14 +14,33 @@ export default class Event extends Component {
         this.props.history.goBack();
     }
 
-    handleDeleteEvent = () => {
+    handleDeleteEvent = (e) => {
+        e.preventDefault();
         const { eventId } = this.props.match.params;
-        this.context.deleteEvent(eventId);
+
+        fetch(`${config.API_ENDPOINT}/events/${eventId}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `bearer ${TokenService.getAuthToken()}`
+            }
+        })
+        .then(res => {
+            this.props.history.push(`/${this.context.currentCalendar.id}/calendar`);
+            this.context.deleteEvent(eventId);
+
+            if (!res.ok) {
+                throw new Error(res.statusText);   
+            }
+        })
+        .catch(error => {
+            console.error(error);
+        })
     }
 
     render() {
-        const { events } = this.context;
-        const currentEvent = events.find(event => event.id === this.props.match.params.eventId);
+        const { userEvents } = this.context;
+        const currentEvent = userEvents.find(event => event.id === parseInt(this.props.match.params.eventId));
         const { id } = this.context.currentUser;
 
         return (
@@ -38,7 +59,7 @@ export default class Event extends Component {
                     </Link>
                 </div>
                 <section className="Event_view_name">
-                    <h1 className="Event_name">{currentEvent.name}</h1>
+                    <h1 className="Event_name">{currentEvent.event_name}</h1>
                 </section>
                 <section className="Event_view_description">
                     <h2 className="section_tag">Description</h2>
@@ -49,7 +70,7 @@ export default class Event extends Component {
                 <section className="Event_view_time">
                     <h2 className="section_tag">Time</h2>
                     <p className="section_time">
-                        {convertTime(currentEvent.time, 'hh:MM A')}
+                        {convertTime(currentEvent.event_time, 'hh:MM A')}
                     </p>
                 </section>
                 <section className="Event_view_location">

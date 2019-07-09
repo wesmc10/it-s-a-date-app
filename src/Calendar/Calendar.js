@@ -64,9 +64,9 @@ export default class Calendar extends Component {
         })
         .then(res => {
             this.context.addCurrentCalendar({});
-            if (res.ok) {
-                return res.json();
-            } throw new Error(res.statusText);
+            if (!res.ok) {
+                throw new Error(res.statusText);
+            }
         })
         .catch(res => {
             this.setState({

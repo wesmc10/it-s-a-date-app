@@ -35,6 +35,7 @@ export default class App extends Component {
     }
 
     handleDeleteEvent = (eventId) => {
+        eventId = parseInt(eventId);
         const newEvents = this.state.userEvents.filter(event =>
             event.id !== eventId  
         );
