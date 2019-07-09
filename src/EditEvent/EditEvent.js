@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import LogOut from '../LogOut/LogOut';
 import './EditEvent.css';
 import ItsADateContext from '../ItsADateContext';
+import config from '../config';
+import TokenService from '../token-service';
 
 export default class EditEvent extends Component {
 
@@ -18,12 +20,12 @@ export default class EditEvent extends Component {
 
     componentDidMount() {
         const { eventId } = this.props.match.params;
-        const currentEvent = this.context.events.find(event => event.id === eventId);
+        const currentEvent = this.context.userEvents.find(event => event.id === parseInt(eventId));
 
         this.setState({
-            name: currentEvent.name,
+            name: currentEvent.event_name,
             description: currentEvent.description,
-            time: currentEvent.time,
+            time: currentEvent.event_time,
             location: currentEvent.location,
             other: currentEvent.other
         });
@@ -31,24 +33,49 @@ export default class EditEvent extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        this.setState({
+            error: null
+        });
         const { name, description, time, location, other } = this.state;
         const calendarId = this.context.currentCalendar.id;
-        const dayId = this.context.clickedDay;
         const { eventId } = this.props.match.params;
 
-        const updatedEvent = {
-            id: eventId,
-            name,
-            description,
-            time,
-            location,
-            other,
-            calendarId,
-            dayId
-        };
-
-        this.context.updateEvent(updatedEvent);
-        this.props.history.push(`/${this.context.currentUser.id}/calendar`);
+        fetch(`${config.API_ENDPOINT}/events/${eventId}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+            body: JSON.stringify({
+                event_name: name,
+                description,
+                event_time: time,
+                location,
+                other
+            })
+        })
+        .then(res => {
+            console.log(res);
+            if (res.ok) {
+                return res.json();
+            } throw new Error(res.statusText);
+        })
+        .then(res => {
+            this.setState({
+                name: '',
+                description: '',
+                time: '',
+                location: '',
+                other: ''
+            });
+            this.context.updateEvent(res.event);
+            this.props.history.push(`/${calendarId}/calendar`);
+        })
+        .catch(res => {
+            this.setState({
+                error: res.error
+            });
+        })
     }
 
     handleNameChange = (e) => {

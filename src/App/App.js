@@ -48,7 +48,7 @@ export default class App extends Component {
         const newEvents = this.state.userEvents.map(event =>
             event.id === updatedEvent.id
             ? updatedEvent
-            : event    
+            : event
         );
         this.setState({
             userEvents: newEvents
