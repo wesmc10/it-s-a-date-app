@@ -13,44 +13,13 @@ import EditEvent from '../EditEvent/EditEvent';
 export default class App extends Component {
 
     state = {
-        users: [],
-        calendars: [],
         userEvents: [],
         currentUser: {},
         currentCalendar: {},
         clickedDay: ''
     };
 
-    handleAddCalendar = (newCalendar) => {
-        this.setState({
-            calendars: [
-                ...this.state.calendars,
-                newCalendar
-            ]
-        });
-    }
-
-    handleDeleteCalendar = (calendarId) => {
-        const newCalendars = this.state.calendars.filter(calendar =>
-            calendar.id !== calendarId
-        );
-        this.setState({
-            calendars: newCalendars
-        });
-    }
-
-    handleUpdateCalendar = (updatedCalendar) => {
-        const newCalendars = this.state.calendars.map(calendar =>
-            calendar.id === updatedCalendar.id
-            ? updatedCalendar
-            : calendar
-        );
-        this.setState({
-            calendars: newCalendars
-        });
-    }
-
-    handleAddEvent = (newEvent) => {
+    handleAddNewUserEvent = (newEvent) => {
         this.setState({
             userEvents: [
                 ...this.state.userEvents,
@@ -85,15 +54,6 @@ export default class App extends Component {
         });
     }
 
-    handleAddUser = (newUser) => {
-        this.setState({
-            users: [
-                ...this.state.users,
-                newUser
-            ]
-        });
-    }
-
     handleAddCurrentUser = (user) => {
         this.setState({
             currentUser: {
@@ -120,20 +80,14 @@ export default class App extends Component {
     render() {
 
         const contextValue = {
-            calendars: this.state.calendars,
             userEvents: this.state.userEvents,
-            users: this.state.users,
             currentUser: this.state.currentUser,
             currentCalendar: this.state.currentCalendar,
             clickedDay: this.state.clickedDay,
-            addCalendar: this.handleAddCalendar,
-            deleteCalendar: this.handleDeleteCalendar,
-            updateCalendar: this.handleUpdateCalendar,
-            addEvent: this.handleAddEvent,
+            addEvent: this.handleAddNewUserEvent,
             addUserEvents: this.handleAddUserEvents,
             deleteEvent: this.handleDeleteEvent,
             updateEvent: this.handleUpdateEvent,
-            addUser: this.handleAddUser,
             addCurrentUser: this.handleAddCurrentUser,
             addCurrentCalendar: this.handleAddCurrentCalendar,
             addClickedDay: this.handleAddClickedDay

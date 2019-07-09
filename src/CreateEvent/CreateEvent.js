@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import LogOut from '../LogOut/LogOut';
 import './CreateEvent.css';
 import ItsADateContext from '../ItsADateContext';
-import uuid from 'uuid';
+import config from '../config';
+import TokenService from '../token-service';
 
 export default class CreateEvent extends Component {
 
@@ -19,26 +20,51 @@ export default class CreateEvent extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        
+        this.setState({
+            error: null
+        });
         const { name, description, time, location, other } = this.state;
         const calendarId = this.context.currentCalendar.id;
         const dayId = this.context.clickedDay;
 
-        const id = uuid();
-        const newEvent = {
-            id,
-            name,
-            description,
-            time,
-            location,
-            calendarId,
-            dayId,
-            other
-        };
-
-        this.context.addEvent(newEvent);
-        this.props.history.push(`/${this.props.match.params.userId}/calendar`);
-        this.context.addClickedDay('');
+        fetch(`${config.API_ENDPOINT}/events`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+            body: JSON.stringify({
+                event_name: name,
+                description,
+                event_time: time,
+                location,
+                other,
+                day_id: dayId,
+                calendar_id: calendarId  
+            })
+        })
+        .then(res => {
+            if (res.ok) {
+                return res.json();
+            } throw new Error(res.statusText);
+        })
+        .then(res => {
+            this.setState({
+                name: '',
+                description: '',
+                time: '',
+                location: '',
+                other: ''
+            });
+            this.context.addEvent(res.event);
+            this.props.history.push(`/${calendarId}/calendar`);
+            this.context.addClickedDay('');
+        })
+        .catch(res => {
+            this.setState({
+                error: res.error
+            });
+        })        
     }
 
     handleNameChange = (e) => {
