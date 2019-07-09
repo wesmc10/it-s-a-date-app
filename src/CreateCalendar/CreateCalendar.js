@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import LogOut from '../LogOut/LogOut';
 import './CreateCalendar.css';
 import ItsADateContext from '../ItsADateContext';
-import uuid from 'uuid';
+import config from '../config';
+import TokenService from '../token-service';
 
 export default class CreateCalendar extends Component {
 
@@ -15,18 +16,41 @@ export default class CreateCalendar extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        this.setState({
+            error: null
+        });
         const { name } = this.state;
         const { userId } = this.props.match.params;
 
-        const id = uuid();
-        const newCalendar = {
-            id,
-            name,
-            userId
-        };
-
-        this.context.addCalendar(newCalendar);
-        this.props.history.push(`/${userId}/calendar`);
+        fetch(`${config.API_ENDPOINT}/calendars`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+            body: JSON.stringify({
+                calendar_name: name,
+                user_id: userId
+            })
+        })
+        .then(res =>
+            (!res.ok)
+                ? res.json().then(e => Promise.reject(e))
+                : res.json()
+        )
+        .then(res => {
+            this.setState({
+                name: ''
+            });
+            console.log(res.calendar);
+            this.context.addCurrentCalendar(res.calendar);
+            this.props.history.push(`/${res.calendar.id}/calendar`);
+        })
+        .catch(res => {
+            this.setState({
+                error: res.error
+            });
+        })
     }
 
     handleCalendarNameChange = (e) => {
