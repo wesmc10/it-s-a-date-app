@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import LogOut from '../LogOut/LogOut';
 import Month from '../Month/Month';
 import dateFns from 'date-fns';
-import config from '../config';
 import './Calendar.css';
 import ItsADateContext from '../ItsADateContext';
 import ViewEventsModal from '../ViewEventsModal/ViewEventsModal';
@@ -18,11 +17,7 @@ export default class Calendar extends Component {
     static contextType = ItsADateContext;
 
     componentDidMount() {
-        const { calendarId } = this.props.match.params;
-
-        fetch(`${config.API_ENDPOINT}/calendars/${calendarId}`)
         const { currentCalendar } = this.context;
-
         this.context.addCurrentCalendar(currentCalendar);
     }
 
@@ -50,16 +45,15 @@ export default class Calendar extends Component {
         });
     }
 
-    handleDeleteCalendar = () => {   
-        const { userId } = this.props.match.params;     
-        const currentCalendar = this.context.calendars.find(calendar => calendar.userId === userId);
+    handleDeleteCalendar = () => {    
+        const { currentCalendar } = this.context;
         this.context.deleteCalendar(currentCalendar.id);
     }
 
     render() {
         const { calendarId } = this.props.match.params;
         const userId = this.context.currentUser.id;
-        const currentCalendar = this.context.calendars.find(calendar => calendar.userId === userId);
+        const { currentCalendar } = this.context;
 
         return (
             <div className="Calendar_view">

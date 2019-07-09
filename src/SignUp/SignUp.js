@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './SignUp.css';
 import ItsADateContext from '../ItsADateContext';
-import uuid from 'uuid';
+import config from '../config';
+import TokenService from '../token-service';
 
 export default class SignUp extends Component {
 
@@ -23,20 +24,44 @@ export default class SignUp extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        this.setState({
+            error: null
+        });
         const { firstName, lastName, userName, password } = this.state;
 
-        const id = uuid();
-        const newUser = {
-            id,
-            firstName,
-            lastName,
-            userName,
-            password
-        };
-
-        this.context.addUser(newUser);
-        this.context.addCurrentUser(newUser);
-        this.props.history.push(`/${id}/create-calendar`);
+        fetch(`${config.API_ENDPOINT}/users`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                first_name: firstName,
+                last_name: lastName,
+                user_name: userName,
+                password
+            })
+        })
+        .then(res =>
+            (!res.ok)
+                ? res.json().then(e => Promise.reject(e))
+                : res.json()
+        )
+        .then(res => {
+            this.setState({
+                firstName: '',
+                lastName: '',
+                userName: '',
+                password: ''
+            });
+            TokenService.saveAuthToken(res.authToken);
+            this.context.addCurrentUser(res.user);
+            this.props.history.push(`/${res.user.id}/create-calendar`);
+        })
+        .catch(res => {
+            this.setState({
+                error: res.error
+            });
+        })
     }
 
     handleFirstNameChange = (e) => {

@@ -60,7 +60,6 @@ export default class App extends Component {
     }
 
     handleAddUserEvents = (events) => {
-        console.log('adding events');
         this.setState({
             userEvents: events
         });
@@ -122,7 +121,7 @@ export default class App extends Component {
 
         const contextValue = {
             calendars: this.state.calendars,
-            userEvents: this.state.events,
+            userEvents: this.state.userEvents,
             users: this.state.users,
             currentUser: this.state.currentUser,
             currentCalendar: this.state.currentCalendar,
