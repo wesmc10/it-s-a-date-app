@@ -42,7 +42,6 @@ export default class CreateCalendar extends Component {
             this.setState({
                 name: ''
             });
-            console.log(res.calendar);
             this.context.addCurrentCalendar(res.calendar);
             this.props.history.push(`/${res.calendar.id}/calendar`);
         })

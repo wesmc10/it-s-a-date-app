@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import LogOut from '../LogOut/LogOut';
 import './EditCalendarName.css';
 import ItsADateContext from '../ItsADateContext';
+import config from '../config';
+import TokenService from '../token-service';
 
 export default class EditCalendarName extends Component {
 
@@ -16,7 +18,7 @@ export default class EditCalendarName extends Component {
         const { currentCalendar } = this.context;
 
         this.setState({
-            name: currentCalendar.name
+            name: currentCalendar.calendar_name
         });
     }
 
@@ -28,17 +30,39 @@ export default class EditCalendarName extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        this.setState({
+            error: null
+        });
         const { name } = this.state;
         const { currentCalendar } = this.context;
 
-        const updatedCalendar = {
-            id: currentCalendar.id,
-            name,
-            userId: currentCalendar.userId
-        };
-
-        this.context.updateCalendar(updatedCalendar);
-        this.props.history.push(`/${currentCalendar.userId}/calendar`);
+        fetch(`${config.API_ENDPOINT}/calendars/${currentCalendar.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+            body: JSON.stringify({
+                calendar_name: name
+            })
+        })
+        .then(res =>
+            (!res.ok)
+                ? res.json().then(e => Promise.reject(e))
+                : res.json()
+        )
+        .then(res => {
+            this.setState({
+                name: ''
+            });
+            //this.context.updateCalendar(updatedCalendar);
+            this.props.history.push(`/${currentCalendar.id}/calendar`);
+        })
+        .catch(res => {
+            this.setState({
+                error: res.error
+            });
+        })
     }
 
     handleClickCancel = () => {
