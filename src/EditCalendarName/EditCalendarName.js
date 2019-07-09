@@ -55,8 +55,8 @@ export default class EditCalendarName extends Component {
             this.setState({
                 name: ''
             });
-            //this.context.updateCalendar(updatedCalendar);
-            this.props.history.push(`/${currentCalendar.id}/calendar`);
+            this.context.addCurrentCalendar(res.calendar);
+            this.props.history.push(`/${res.calendar.id}/calendar`);
         })
         .catch(res => {
             this.setState({

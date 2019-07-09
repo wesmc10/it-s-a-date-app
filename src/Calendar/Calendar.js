@@ -6,12 +6,15 @@ import dateFns from 'date-fns';
 import './Calendar.css';
 import ItsADateContext from '../ItsADateContext';
 import ViewEventsModal from '../ViewEventsModal/ViewEventsModal';
+import config from '../config';
+import TokenService from '../token-service';
 
 export default class Calendar extends Component {
 
     state = {
         currentMonth: new Date(),
-        showModal: false
+        showModal: false,
+        error: null
     };
 
     static contextType = ItsADateContext;
@@ -45,9 +48,31 @@ export default class Calendar extends Component {
         });
     }
 
-    handleDeleteCalendar = () => {    
+    handleDeleteCalendar = (e) => {
+        e.preventDefault();
+        this.setState({
+            error: null
+        });
         const { currentCalendar } = this.context;
-        this.context.deleteCalendar(currentCalendar.id);
+
+        fetch(`${config.API_ENDPOINT}/calendars/${currentCalendar.id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `bearer ${TokenService.getAuthToken()}`
+            }
+        })
+        .then(res => {
+            this.context.addCurrentCalendar({});
+            if (res.ok) {
+                return res.json();
+            } throw new Error(res.statusText);
+        })
+        .catch(res => {
+            this.setState({
+                error: res.error
+            });
+        })
     }
 
     render() {
@@ -64,7 +89,7 @@ export default class Calendar extends Component {
                     <Link to={`/${calendarId}/edit-calendar`} className="Calendar_edit_button">
                         Edit
                     </Link>
-                    <h1 className="Calendar_name">{currentCalendar.name}</h1>
+                    <h1 className="Calendar_name">{currentCalendar.calendar_name}</h1>
                 </section>
                 <section className="Calendar_view_calendar">
                     <Month 
