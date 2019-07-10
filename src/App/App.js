@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import LandingPage from '../LandingPage/LandingPage';
 import ItsADateContext from '../ItsADateContext';
 import CreateCalendar from '../CreateCalendar/CreateCalendar';
@@ -33,9 +33,7 @@ export default class App extends Component {
                         [key]: value
                     });
                 } catch (error) {
-                    this.setState({
-                        [key]: value
-                    });
+                    console.error(error);
                 }
             }
         }   
@@ -66,7 +64,7 @@ export default class App extends Component {
         this.setState({
             userEvents: newEvents
         });
-        sessionStorage.setItem('userEvents', JSON.stringify(newEvents));
+        sessionStorage.setItem('userEvents', JSON.stringify(this.state.userEvents));
     }
 
     handleUpdateEvent = (updatedEvent) => {
@@ -78,7 +76,7 @@ export default class App extends Component {
         this.setState({
             userEvents: newEvents
         });
-        sessionStorage.setItem('userEvents', JSON.stringify(newEvents));
+        sessionStorage.setItem('userEvents', JSON.stringify(this.state.userEvents));
     }
 
     handleAddCurrentUser = (user) => {
@@ -127,37 +125,39 @@ export default class App extends Component {
             <ItsADateContext.Provider value={contextValue}>
                 <main role="main" className="App_main">
                     {this.state.error && <p className="error">There was an error</p>}
-                    <Switch>
-                        <Route
-                            exact
-                            path='/'
-                            component={LandingPage}
-                        />
-                        <Route
-                            path='/:userId/create-calendar'
-                            component={CreateCalendar}
-                        />
-                        <Route
-                            path='/:userId/create-event'
-                            component={CreateEvent}
-                        />
-                        <Route
-                            path='/:calendarId/calendar'
-                            component={Calendar}
-                        />
-                        <Route
-                            path='/:eventId/event'
-                            component={Event}
-                        />
-                        <Route
-                            path='/:calendarId/edit-calendar'
-                            component={EditCalendarName}
-                        />
-                        <Route
-                            path='/:eventId/edit-event'
-                            component={EditEvent}
-                        />
-                    </Switch>
+                    <BrowserRouter>
+                        <Switch>
+                            <Route
+                                exact
+                                path='/'
+                                component={LandingPage}
+                            />
+                            <Route
+                                path='/:userId/create-calendar'
+                                component={CreateCalendar}
+                            />
+                            <Route
+                                path='/:userId/create-event'
+                                component={CreateEvent}
+                            />
+                            <Route
+                                path='/:calendarId/calendar'
+                                component={Calendar}
+                            />
+                            <Route
+                                path='/:eventId/event'
+                                component={Event}
+                            />
+                            <Route
+                                path='/:calendarId/edit-calendar'
+                                component={EditCalendarName}
+                            />
+                            <Route
+                                path='/:eventId/edit-event'
+                                component={EditEvent}
+                            />
+                        </Switch>
+                    </BrowserRouter>
                 </main>
             </ItsADateContext.Provider>
         )
