@@ -8,10 +8,11 @@ export default class LogOut extends Component {
     static contextType = ItsADateContext;
 
     handleLogOutClick = () => {
-        TokenService.clearAuthToken();
         this.context.addClickedDay('');
         this.context.addCurrentCalendar({});
         this.context.addCurrentUser({});
+        this.context.addUserEvents({});
+        TokenService.clearStorage();
     }
 
     render() {

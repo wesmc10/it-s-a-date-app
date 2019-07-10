@@ -2,13 +2,13 @@ import config from './config';
 
 const TokenService = {
     saveAuthToken(token) {
-        window.sessionStorage.setItem(config.TOKEN_KEY, token);
+        sessionStorage.setItem(config.TOKEN_KEY, token);
     },
-    clearAuthToken() {
-        window.sessionStorage.removeItem(config.TOKEN_KEY);
+    clearStorage() {
+        sessionStorage.clear();
     },
     getAuthToken() {
-        return window.sessionStorage.getItem(config.TOKEN_KEY);
+        return sessionStorage.getItem(config.TOKEN_KEY);
     }
 }
 
