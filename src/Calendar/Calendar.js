@@ -19,11 +19,6 @@ export default class Calendar extends Component {
 
     static contextType = ItsADateContext;
 
-    componentDidMount() {
-        const { currentCalendar } = this.context;
-        this.context.addCurrentCalendar(currentCalendar);
-    }
-
     handlePreviousMonth = () => {
         this.setState({
             currentMonth: dateFns.subMonths(this.state.currentMonth, 1)

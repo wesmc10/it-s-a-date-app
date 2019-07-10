@@ -19,6 +19,28 @@ export default class App extends Component {
         clickedDay: ''
     };
 
+    componentDidMount() {
+        this.hydrateStateWithSessionStorage();
+    }
+
+    hydrateStateWithSessionStorage() {
+        for (const key in this.state) {
+            if (sessionStorage.hasOwnProperty(key)) {
+                let value = sessionStorage.getItem(key);
+                try {
+                    value = JSON.parse(value);
+                    this.setState({
+                        [key]: value
+                    });
+                } catch (error) {
+                    this.setState({
+                        [key]: value
+                    });
+                }
+            }
+        }   
+    }
+
     handleAddNewUserEvent = (newEvent) => {
         this.setState({
             userEvents: [
@@ -26,12 +48,14 @@ export default class App extends Component {
                 newEvent
             ]
         });
+        sessionStorage.setItem('userEvents', JSON.stringify(this.state.userEvents));
     }
 
     handleAddUserEvents = (events) => {
         this.setState({
             userEvents: events
         });
+        sessionStorage.setItem('userEvents', JSON.stringify(this.state.userEvents));
     }
 
     handleDeleteEvent = (eventId) => {
@@ -42,6 +66,7 @@ export default class App extends Component {
         this.setState({
             userEvents: newEvents
         });
+        sessionStorage.setItem('userEvents', JSON.stringify(newEvents));
     }
 
     handleUpdateEvent = (updatedEvent) => {
@@ -53,6 +78,7 @@ export default class App extends Component {
         this.setState({
             userEvents: newEvents
         });
+        sessionStorage.setItem('userEvents', JSON.stringify(newEvents));
     }
 
     handleAddCurrentUser = (user) => {
@@ -64,18 +90,21 @@ export default class App extends Component {
                 user_name: user.user_name
             }
         });
+        sessionStorage.setItem('currentUser', JSON.stringify(this.state.currentUser));
     }
 
     handleAddCurrentCalendar = (calendar) => {
         this.setState({
             currentCalendar: calendar
         });
+        sessionStorage.setItem('currentCalendar', JSON.stringify(this.state.currentCalendar));
     }
 
     handleAddClickedDay = (dayId) => {
         this.setState({
             clickedDay: dayId
         });
+        sessionStorage.setItem('clickedDay', this.state.clickedDay);
     }
 
     render() {
