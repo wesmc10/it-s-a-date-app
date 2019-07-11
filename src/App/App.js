@@ -28,7 +28,7 @@ export default class App extends Component {
             if (sessionStorage.hasOwnProperty(key)) {
                 let value = sessionStorage.getItem(key);
                 try {
-                    value = JSON.parse(value);
+                    value = value ? JSON.parse(value) : '';
                     this.setState({
                         [key]: value
                     });
