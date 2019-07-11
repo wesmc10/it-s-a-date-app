@@ -18,16 +18,24 @@ export default class EditEvent extends Component {
 
     static contextType = ItsADateContext;
 
+    static defaultProps = {
+        match: {
+            params: () => {}
+        }
+    };
+
     componentDidMount() {
         const { eventId } = this.props.match.params;
-        const currentEvent = this.context.userEvents.find(event => event.id === parseInt(eventId));
+        let currentEvents = sessionStorage.getItem('userEvents');
+        currentEvents = JSON.parse(currentEvents);
+        const currentEvent = currentEvents && currentEvents.find(event => event.id === parseInt(eventId));
 
         this.setState({
-            name: currentEvent.event_name,
-            description: currentEvent.description,
-            time: currentEvent.event_time,
-            location: currentEvent.location,
-            other: currentEvent.other
+            name: currentEvent ? currentEvent.event_name : '',
+            description: currentEvent ? currentEvent.description : '',
+            time: currentEvent ? currentEvent.event_time : '',
+            location: currentEvent ? currentEvent.location: '',
+            other: currentEvent ? currentEvent.other : ''
         });
     }
 
@@ -55,7 +63,6 @@ export default class EditEvent extends Component {
             })
         })
         .then(res => {
-            console.log(res);
             if (res.ok) {
                 return res.json();
             } throw new Error(res.statusText);

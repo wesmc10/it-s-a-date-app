@@ -18,7 +18,7 @@ export default class EditCalendarName extends Component {
         const { currentCalendar } = this.context;
 
         this.setState({
-            name: currentCalendar.calendar_name
+            name: currentCalendar ? currentCalendar.calendar_name : ''
         });
     }
 

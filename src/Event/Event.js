@@ -39,8 +39,9 @@ export default class Event extends Component {
     }
 
     render() {
-        const { userEvents } = this.context;
-        const currentEvent = userEvents.find(event => event.id === parseInt(this.props.match.params.eventId));
+        let userEvents = sessionStorage.getItem('userEvents');
+        userEvents = JSON.parse(userEvents);
+        const currentEvent = userEvents && userEvents.find(event => event.id === parseInt(this.props.match.params.eventId));
         const { id } = this.context.currentUser;
 
         return (
@@ -49,7 +50,7 @@ export default class Event extends Component {
                     <LogOut />
                 </header>
                 <div className="Event_edit_link">
-                    <Link to={`/${currentEvent.id}/edit-event`}>
+                    <Link to={`/${currentEvent && currentEvent.id}/edit-event`}>
                         Edit Event
                     </Link>
                 </div>
@@ -59,27 +60,27 @@ export default class Event extends Component {
                     </Link>
                 </div>
                 <section className="Event_view_name">
-                    <h1 className="Event_name">{currentEvent.event_name}</h1>
+                    <h1 className="Event_name">{currentEvent && currentEvent.event_name}</h1>
                 </section>
                 <section className="Event_view_description">
                     <h2 className="section_tag">Description</h2>
                     <p className="section_description">
-                        {currentEvent.description}
+                        {currentEvent && currentEvent.description}
                     </p>
                 </section>
                 <section className="Event_view_time">
                     <h2 className="section_tag">Time</h2>
                     <p className="section_time">
-                        {convertTime(currentEvent.event_time, 'hh:MM A')}
+                        {currentEvent && convertTime(currentEvent.event_time, 'hh:MM A')}
                     </p>
                 </section>
                 <section className="Event_view_location">
                     <h2 className="section_tag">Location</h2>
                     <p className="location_description">
-                        {currentEvent.location}
+                        {currentEvent && currentEvent.location}
                     </p>
                 </section>
-                {currentEvent.other
+                {currentEvent && currentEvent.other
                     ?   <section className="Event_view_other">
                             <h2 className="section_tag">Other</h2>
                             <p className="section_description">

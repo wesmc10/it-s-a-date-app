@@ -19,6 +19,12 @@ export default class Calendar extends Component {
 
     static contextType = ItsADateContext;
 
+    static defaultProps = {
+        match: {
+            params: () => {}
+        }
+    };
+
     handlePreviousMonth = () => {
         this.setState({
             currentMonth: dateFns.subMonths(this.state.currentMonth, 1)
