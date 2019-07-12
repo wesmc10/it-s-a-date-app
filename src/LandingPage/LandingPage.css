@@ -1,11 +1,20 @@
 .Landing_page_content_section {
     text-align: center;
+    color: #023570;
+    padding-top: 50px;
 }
 
 .title {
-    font-size: 36px;
+    font-family: 'Neucha', cursive;
+    font-size: 60px;
+    letter-spacing: 3px;
+}
+
+.subtitle {
+    font-family: 'PT Sans', sans-serif;
 }
 
 .paragraph_content {
+    font-family: 'PT Sans', sans-serif;
     padding: 15px;
 }
