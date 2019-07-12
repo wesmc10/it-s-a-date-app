@@ -28,7 +28,7 @@ export default class App extends Component {
             if (sessionStorage.hasOwnProperty(key)) {
                 let value = sessionStorage.getItem(key);
                 try {
-                    value = value ? JSON.parse(value) : '';
+                    value = value && JSON.parse(value);
                     this.setState({
                         [key]: value
                     });
@@ -102,7 +102,6 @@ export default class App extends Component {
         this.setState({
             clickedDay: dayId
         });
-        sessionStorage.setItem('clickedDay', this.state.clickedDay);
     }
 
     render() {
