@@ -6,16 +6,18 @@
     margin: 30px 15px;
 }
 
+.Create_event_form_name, .Create_event_form_description,
+.Create_event_form_time, .Create_event_form_location,
+.Create_event_form_other {
+    margin-left: 15px;
+}
+
 .Create_event_name_label, #Create_event_name,
 .Create_event_description_label, #Create_event_description,
 .Create_event_time_label, #Create_event_time,
 .Create_event_location_label, #Create_event_location,
 .Create_event_other_label, #Create_event_other {
     display: block;
-}
-
-.Create_event_form {
-    margin-left: 15px;
 }
 
 .Create_event_name_label, .Create_event_description_label,

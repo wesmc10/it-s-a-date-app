@@ -6,6 +6,8 @@ import './Event.css';
 import ItsADateContext from '../ItsADateContext';
 import config from '../config';
 import TokenService from '../token-service';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 export default class Event extends Component {
     static contextType = ItsADateContext;
@@ -49,51 +51,65 @@ export default class Event extends Component {
                 <header className="Event_view_header">
                     <LogOut />
                 </header>
-                <div className="Event_edit_link">
-                    <Link to={`/${currentEvent && currentEvent.id}/edit-event`}>
-                        Edit Event
-                    </Link>
-                </div>
-                <div className="Event_delete_link">
-                    <Link to={`/${id}/calendar`} onClick={this.handleDeleteEvent}>
-                        Delete Event
-                    </Link>
-                </div>
+                <section className="Event_icon_section">
+                    <div className="Event_edit_button Tooltip_edit">
+                        <Link to={`/${currentEvent && currentEvent.id}/edit-event`}>
+                            <span className="Event_edit_icon">
+                                <FontAwesomeIcon
+                                    icon={faEdit}
+                                />
+                                <span className="Tooltip_edit_text">
+                                    Edit Event
+                                </span>
+                            </span>
+                        </Link>
+                    </div>
+                    <div className="Event_delete_button Tooltip_delete">
+                        <Link to={`/${id}/calendar`} onClick={this.handleDeleteEvent}>
+                            <span className="Calendar_delete_icon">
+                                <FontAwesomeIcon
+                                    icon={faTrashAlt}
+                                />
+                                <span className="Tooltip_delete_text">
+                                    Delete Event
+                                </span>
+                            </span>
+                        </Link>
+                    </div>
+                </section>
                 <section className="Event_view_name">
                     <h1 className="Event_name">{currentEvent && currentEvent.event_name}</h1>
                 </section>
                 <section className="Event_view_description">
                     <h2 className="section_tag">Description</h2>
-                    <p className="section_description">
+                    <p className="section_description paragraph">
                         {currentEvent && currentEvent.description}
                     </p>
                 </section>
                 <section className="Event_view_time">
                     <h2 className="section_tag">Time</h2>
-                    <p className="section_time">
+                    <p className="section_time paragraph">
                         {currentEvent && convertTime(currentEvent.event_time, 'hh:MM A')}
                     </p>
                 </section>
                 <section className="Event_view_location">
                     <h2 className="section_tag">Location</h2>
-                    <p className="location_description">
+                    <p className="location_description paragraph">
                         {currentEvent && currentEvent.location}
                     </p>
                 </section>
                 {currentEvent && currentEvent.other
                     ?   <section className="Event_view_other">
                             <h2 className="section_tag">Other</h2>
-                            <p className="section_description">
+                            <p className="section_description paragraph">
                                 {currentEvent.other}
                             </p>
                         </section>
                     : ''
                 }
-                <section className="Event_button">
-                    <button type="reset" onClick={this.onClickBack}>
-                        Back
-                    </button>
-                </section>
+                <button type="reset" className="Event_back_button" onClick={this.onClickBack}>
+                    Back
+                </button>
             </div>
         )
     }

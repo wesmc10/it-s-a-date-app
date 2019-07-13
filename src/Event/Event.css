@@ -1,21 +1,66 @@
 .Event_name {
-    font-size: 36px;
+    font-family: 'Neucha', cursive;
+    font-size: 45px;
+    letter-spacing: 3px;
+    margin: 40px 15px 20px;
     text-align: center;
 }
 
-.section_tag, .section_time {
+.Event_edit_icon {
+    margin-left: 15px;
+    font-size: 25px;
+}
+
+.Event_delete_icon {
+    font-size: 25px;
+    margin-right: 15px;
+}
+
+.Event_icon_section {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Event_delete_button a:hover {
+    color: red;
+}
+
+.Event_edit_button a:hover {
+    color: #fdd524;
+}
+
+.paragraph {
+    margin: 0 15px 25px 15px;
+    font-size: 17px;
+    font-weight: 500;
     text-align: center;
 }
 
-.section_description {
-    margin: 0 15px 0 15px;
-}
-
-.location_description {
+.section_tag {
     text-align: center;
 }
 
-.Event_button {
-    margin: 20px 0 25px 0;
-    text-align: center;
+.section_tag {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.Event_back_button {
+    margin: 50px auto 60px;
+    color: #023570;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 16px;
+    background-color: #fcdf60;
+    letter-spacing: 0.5px;
+    display: block;
+}
+
+.Event_back_button:hover {
+    cursor: pointer;
+    background-color: #fdd524;
 }
