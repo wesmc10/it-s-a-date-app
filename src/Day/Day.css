@@ -2,22 +2,25 @@
     display: inline-block;
     width: calc(100% / 7);
     text-align: center;
-    border: 1px solid black;
+    border-right: 1px solid #023570;
+    border-bottom: 1px solid #023570;
     height: 0;
     padding-bottom: calc(100% / 7);
     position: relative;
+    font-weight: 500;
 }
 
 .day_date_column:hover {
     cursor: pointer;
+    background-color: #fdd524;
 }
 
 .faded {
-    color: lightgray;
+    color: #979696;
 }
 
 .highlighted {
-    background-color: lightblue;
+    background-color: #71b6d1;
 }
 
 .Event_alert {

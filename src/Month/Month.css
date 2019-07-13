@@ -1,7 +1,4 @@
 .Month {
-    border: 3px solid black;
     width: 320px;
-    height: 400px;
-    margin-left: 15px;
-    margin-top: 20px;
+    margin: 20px 15px 50px;
 }

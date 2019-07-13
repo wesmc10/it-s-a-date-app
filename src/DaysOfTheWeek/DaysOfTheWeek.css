@@ -3,5 +3,11 @@
     width: calc(100% / 7);
     text-align: center;
     padding: 7px 0;
-    border-bottom: 1px solid black;
+    font-weight: 500;
+}
+
+.Days_of_week {
+    border-right: 2px solid #023570;
+    border-left: 2px solid #023570;
+    border-bottom: 2px solid #023570;
 }

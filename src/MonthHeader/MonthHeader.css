@@ -1,22 +1,32 @@
 .Month_header {
-    border-bottom: 1px solid black;
-    padding: calc(100% / 13);
+    padding: 20px;
     text-align: center;
     font-size: 22px;
     position: relative;
+    background-color: #023570;
 }
 
 .Month_previous {
     position: absolute;
     left: 15px;
+    top: 25px;
+    color: #71b6d1;
 }
 
 .Month_previous:hover, .Month_next:hover {
     cursor: pointer;
+    color: #fdd524;
 }
 
 .Month_next {
     position: absolute;
     right: 15px;
     top: 25px;
+    color: #71b6d1
+}
+
+.Month_and_year {
+    font-size: 30px;
+    font-weight: 500;
+    color: #71b6d1;
 }

@@ -9,7 +9,7 @@ export default function Month(props) {
         <div className="Month">
             <div className="Month_year">
                 <MonthHeader 
-                    prevMonth={props.prevMonth} 
+                    prevMonth={props.prevMonth}
                     nextMonth={props.nextMonth}
                     currentMonth={props.currentMonth}
                 />
