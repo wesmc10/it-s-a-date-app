@@ -89,21 +89,27 @@ export default class Calendar extends Component {
                     <LogOut />
                 </header>
                 <section className="Calendar_icon_section">
-                    <div className="Calendar_edit_button">
+                    <div className="Calendar_edit_button Tooltip_edit">
                         <Link to={`/${calendarId}/edit-calendar`}>
                             <span className="Calendar_edit_icon">
                                 <FontAwesomeIcon
                                     icon={faEdit}
                                 />
+                                <span className="Tooltip_edit_text">
+                                    Edit Calendar
+                                </span>
                             </span>
                         </Link>
                     </div>
-                    <div className="Calendar_delete_button">
+                    <div className="Calendar_delete_button Tooltip_delete">
                         <Link to={`/${userId}/create-calendar`} onClick={this.handleDeleteCalendar}>
                             <span className="Calendar_delete_icon">
                                 <FontAwesomeIcon
                                     icon={faTrashAlt}
                                 />
+                                <span className="Tooltip_delete_text">
+                                    Delete Calendar
+                                </span>
                             </span>
                         </Link>
                     </div>

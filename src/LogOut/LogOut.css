@@ -8,6 +8,10 @@
     padding-bottom: 10px;
 }
 
+.Header_logged_in a:hover {
+    color: #fdd524;
+}
+
 a:link, a:visited {
     text-decoration: none;
     color: #023570;
@@ -17,9 +21,9 @@ a:link, a:visited {
 
 .Calendar_icon_header {
     font-size: 35px;
-    margin-left: 20px;
+    margin-left: 15px;
 }
 
 .LogOut_link {
-    margin-right: 20px;
+    margin-right: 15px;
 }
