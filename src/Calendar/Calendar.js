@@ -8,6 +8,8 @@ import ItsADateContext from '../ItsADateContext';
 import ViewEventsModal from '../ViewEventsModal/ViewEventsModal';
 import config from '../config';
 import TokenService from '../token-service';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 export default class Calendar extends Component {
 
@@ -86,10 +88,27 @@ export default class Calendar extends Component {
                 <header className="Calendar_view_header">
                     <LogOut />
                 </header>
+                <section className="Calendar_icon_section">
+                    <div className="Calendar_edit_button">
+                        <Link to={`/${calendarId}/edit-calendar`}>
+                            <span className="Calendar_edit_icon">
+                                <FontAwesomeIcon
+                                    icon={faEdit}
+                                />
+                            </span>
+                        </Link>
+                    </div>
+                    <div className="Calendar_delete_button">
+                        <Link to={`/${userId}/create-calendar`} onClick={this.handleDeleteCalendar}>
+                            <span className="Calendar_delete_icon">
+                                <FontAwesomeIcon
+                                    icon={faTrashAlt}
+                                />
+                            </span>
+                        </Link>
+                    </div>
+                </section>
                 <section className="Calendar_name_section">
-                    <Link to={`/${calendarId}/edit-calendar`} className="Calendar_edit_button">
-                        Edit
-                    </Link>
                     <h1 className="Calendar_name">{currentCalendar.calendar_name}</h1>
                 </section>
                 <section className="Calendar_view_calendar">
@@ -107,11 +126,6 @@ export default class Calendar extends Component {
                         hideModal={this.handleHideModal}
                     />
                 </div>
-                <section className="Calendar_delete_section">
-                    <Link to={`/${userId}/create-calendar`} onClick={this.handleDeleteCalendar} className="Calendar_delete_button">
-                        Delete Calendar
-                    </Link>
-                </section>
             </div>
         )
     }

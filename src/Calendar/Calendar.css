@@ -1,17 +1,29 @@
-.Calendar_delete_section {
-    text-align: center;
-    padding: 40px 0;
-}
-
-.Calendar_delete_button {
-    color: red;
-}
-
 .Calendar_name {
+    font-family: 'Neucha', cursive;
+    font-size: 45px;
+    letter-spacing: 3px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     text-align: center;
-    font-size: 36px;
 }
 
-.Calendar_edit_button {
-    padding: 10px;
+.Calendar_edit_icon {
+    margin-left: 15px;
+    font-size: 25px;
+}
+
+.Calendar_delete_icon {
+    font-size: 25px;
+    margin-right: 15px;
+}
+
+.Calendar_icon_section {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Calendar_delete_button a:hover {
+    color: red;
 }
