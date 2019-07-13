@@ -1,6 +1,9 @@
 .Create_event_title {
-    font-size: 36px;
+    font-family: 'Neucha', cursive;
+    font-size: 40px;
+    letter-spacing: 3px;
     text-align: center;
+    margin: 30px 15px;
 }
 
 .Create_event_name_label, #Create_event_name,
@@ -19,14 +22,47 @@
 .Create_event_time_label, .Create_event_location_label,
 .Create_event_other_label {
     margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 #Create_event_name, #Create_event_description,
 #Create_event_time, #Create_event_location,
 #Create_event_other {
     margin-bottom: 10px;
+    border-radius: 3px;
+    padding-left: 5px;
 }
 
-.Create_event_submit {
-    margin-right: 8px;
+#Create_event_name, #Create_event_location {
+    height: 25px;
+}
+
+#Create_event_description, #Create_event_other {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.Create_event_submit, .Create_event_cancel {
+    margin-top: 15px;
+    color: #023570;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 16px;
+    background-color: #fcdf60;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+.Create_event_submit:hover, .Create_event_cancel:hover {
+    cursor: pointer;
+    background-color: #fdd524;
+}
+
+.Create_event_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }

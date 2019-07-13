@@ -25,7 +25,8 @@
 
 .Event_alert {
     position: absolute;
-    font-size: 10px;
-    bottom: 3px;
-    left: 5px;
+    font-size: 11px;
+    bottom: 5%;
+    left: 45%;
+    color: red;
 }

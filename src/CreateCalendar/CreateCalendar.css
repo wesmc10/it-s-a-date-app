@@ -1,20 +1,46 @@
 .Create_calendar_title {
-    font-size: 36px;
+    font-family: 'Neucha', cursive;
+    font-size: 40px;
+    letter-spacing: 3px;
     text-align: center;
+    margin: 30px 15px;
 }
 
 .Create_calendar_label, #Create_calendar_name {
-    display: block;
+    display: inline-block;
 }
 
 .Create_calendar_label {
-    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 #Create_calendar_name {
     margin-bottom: 10px;
+    height: 25px;
+    border-radius: 3px;
+    padding-left: 5px;
 }
 
 .Create_calendar_form {
     margin-left: 15px;
+    margin-right: 15px;
+}
+
+.Create_calendar_button {
+    margin: 15px auto 50px;
+    color: #023570;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 16px;
+    background-color: #fcdf60;
+    letter-spacing: 0.5px;
+    display: block;
+}
+
+.Create_calendar_button:hover {
+    cursor: pointer;
+    background-color: #fdd524;
 }

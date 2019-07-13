@@ -179,12 +179,14 @@ export default class CreateEvent extends Component {
                                 onChange={this.handleOtherChange}
                             />
                         </div>
-                        <button type="submit" className="Create_event_submit">
-                            Create
-                        </button>
-                        <button type="reset" onClick={this.handleClickCancel}>
-                            Cancel
-                        </button>
+                        <div className="Create_event_buttons">
+                            <button type="submit" className="Create_event_submit">
+                                Create
+                            </button>
+                            <button type="reset" className="Create_event_cancel" onClick={this.handleClickCancel}>
+                                Cancel
+                            </button>
+                        </div>
                     </form>
                 </section>
             </div>

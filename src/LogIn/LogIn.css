@@ -31,9 +31,7 @@ label {
 }
 
 .Login_button {
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 15px;
+    margin: 15px auto 50px;
     color: #023570;
     border: none;
     border-radius: 5px;

@@ -86,7 +86,7 @@ export default class CreateCalendar extends Component {
                                 onChange={this.handleCalendarNameChange}
                             />
                         </div>
-                        <button type="submit">
+                        <button type="submit" className="Create_calendar_button">
                             Create
                         </button>
                     </form>
