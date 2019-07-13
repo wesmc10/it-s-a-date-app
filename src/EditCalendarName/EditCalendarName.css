@@ -1,24 +1,52 @@
 .Edit_calendar_title {
-    font-size: 36px;
+    font-family: 'Neucha', cursive;
+    font-size: 40px;
+    letter-spacing: 3px;
     text-align: center;
+    margin: 30px 15px;
 }
 
 .Edit_calendar_label, #Edit_calendar_name {
-    display: block;
+    display: inline-block;
 }
 
 .Edit_calendar_label {
     margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.Edit_calendar_form_name {
+    margin-left: 15px;
 }
 
 #Edit_calendar_name {
     margin-bottom: 10px;
+    height: 25px;
+    border-radius: 3px;
+    padding-left: 5px;
 }
 
-.Edit_calendar_form {
-    margin-left: 15px;
+.Edit_calendar_submit, .Edit_calendar_cancel {
+    margin-top: 15px;
+    color: #023570;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 16px;
+    background-color: #fcdf60;
+    letter-spacing: 0.5px;
+    display: inline-block;
 }
 
-.Edit_calendar_submit_button {
-    margin-right: 8px;
+.Edit_calendar_submit:hover, .Edit_calendar_cancel:hover {
+    cursor: pointer;
+    background-color: #fdd524;
+}
+
+.Edit_calendar_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }

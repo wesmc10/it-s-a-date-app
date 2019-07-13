@@ -15,7 +15,8 @@ export default class EditCalendarName extends Component {
     static contextType = ItsADateContext;
 
     componentDidMount() {
-        const { currentCalendar } = this.context;
+        let currentCalendar = sessionStorage.getItem('currentCalendar');
+        currentCalendar = currentCalendar && JSON.parse(currentCalendar);
 
         this.setState({
             name: currentCalendar ? currentCalendar.calendar_name : ''
@@ -98,12 +99,14 @@ export default class EditCalendarName extends Component {
                                 onChange={this.handleCalendarNameChange}
                             />
                         </div>
-                        <button type="submit" className="Edit_calendar_submit_button">
-                            Submit
-                        </button>
-                        <button type="button" onClick={this.handleClickCancel}>
-                            Cancel
-                        </button>
+                        <div className="Edit_calendar_buttons">
+                            <button type="submit" className="Edit_calendar_submit">
+                                Submit
+                            </button>
+                            <button type="button" className="Edit_calendar_cancel" onClick={this.handleClickCancel}>
+                                Cancel
+                            </button>
+                        </div>
                     </form>
                 </section>
             </div>
