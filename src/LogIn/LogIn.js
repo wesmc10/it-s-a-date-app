@@ -80,7 +80,7 @@ export default class LogIn extends Component {
                         {error && <p className="red">{error}</p>}
                     </div>
                     <div className="Login_form_user_name">
-                        <label htmlFor="Login_user_name">
+                        <label htmlFor="Login_user_name" className="Login_label_user_name">
                             User Name
                         </label>
                         <input 
@@ -92,7 +92,7 @@ export default class LogIn extends Component {
                         />
                     </div>
                     <div className="Login_form_password">
-                        <label htmlFor="Login_password">
+                        <label htmlFor="Login_password" className="Login_label_password">
                             Password
                         </label>
                         <input

@@ -1,6 +1,8 @@
 import React from 'react';
 import LogIn from '../LogIn/LogIn';
 import SignUp from '../SignUp/SignUp';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import './LandingPage.css';
 
 export default function LandingPage(props) {
@@ -11,7 +13,14 @@ export default function LandingPage(props) {
                 <LogIn {...props} />
             </header>
             <section className="Landing_page_content_section">
-                <h1 className="title">It's a Date</h1>
+                <h1 className="title">
+                    <span className="Calendar_icon">
+                        <FontAwesomeIcon
+                            icon={faCalendarAlt}
+                        />
+                    </span>
+                    It's a Date
+                </h1>
                 <h2 className="subtitle">Leave Your Worries Behind</h2>
                 <p className="paragraph_content">You've got enough on your mind, so relax and let 
                 It's a Date remember about all of your important events. Just create a calendar, 

@@ -7,14 +7,49 @@ fieldset {
 }
 
 .Login {
-    padding: 15px;
-    background-color: #f1f1f1;
+    padding: 20px;
+    background-color: #71b6d1;
 }
 
 .Login_form_user_name, .Login_form_password {
     margin-bottom: 8px;
 }
 
+.Login_label_user_name, .Login_label_password {
+    color: #023570;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.Login_label_password {
+    margin-right: 16px;
+}
+
+#Login_password, #Login_user_name {
+    height: 25px;
+    padding-left: 5px;
+    border-radius: 3px;
+}
+
 label {
     margin-right: 5px;
+}
+
+.Login_button {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 15px;
+    color: #023570;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 16px;
+    background-color: #fcdf60;
+    letter-spacing: 0.5px;
+}
+
+.Login_button:hover {
+    cursor: pointer;
+    background-color: #fdd524;
 }

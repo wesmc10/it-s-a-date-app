@@ -4,17 +4,25 @@
     padding-top: 50px;
 }
 
+.Calendar_icon {
+    padding-right: 15px;
+}
+
 .title {
     font-family: 'Neucha', cursive;
     font-size: 60px;
     letter-spacing: 3px;
+    padding-bottom: 25px;
 }
 
 .subtitle {
-    font-family: 'PT Sans', sans-serif;
+    font-size: 26px;
+    padding-bottom: 20px;
 }
 
 .paragraph_content {
-    font-family: 'PT Sans', sans-serif;
+    font-size: 17px;
     padding: 15px;
+    font-weight: bolder;
+    padding-bottom: 20px;
 }
