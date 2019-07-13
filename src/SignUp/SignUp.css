@@ -1,7 +1,57 @@
+fieldset {
+    border: 0;
+}
+
 .Signup_form_first_name, .Signup_form_last_name, .Signup_form_user_name, .Signup_form_password {
     margin-bottom: 8px;
 }
 
+.Signup_label_first_name, .Signup_label_last_name, .Signup_label_user_name, .Signup_label_password {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.Signup_label_last_name {
+    margin-right: 8px;
+}
+
+.Signup_label_password {
+    margin-right: 18px;
+}
+
+.Signup {
+    padding-left: 20px;
+    padding-bottom: 40px;
+}
+
 legend {
-    font-size: 20px;
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+#Signup_first_name, #Signup_last_name, #Signup_user_name, #Signup_password {
+    height: 25px;
+    padding-left: 5px;
+    border-radius: 3px;
+}
+
+.Signup_button {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 15px;
+    color: #023570;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 16px;
+    background-color: #fcdf60;
+    letter-spacing: 0.5px;
+}
+
+.Signup_button:hover {
+    cursor: pointer;
+    background-color: #fdd524;
 }

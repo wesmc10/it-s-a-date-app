@@ -4,10 +4,11 @@
     box-sizing: border-box;
 }
 
-.App_main {
+body {
     font-family: 'PT Sans', sans-serif;
     background-color: #f1f1f1;
     height: 100vh;
     line-height: 1.5;
     letter-spacing: 1px;
+    color: #023570;
 }

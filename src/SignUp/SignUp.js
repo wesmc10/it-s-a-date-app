@@ -99,7 +99,7 @@ export default class SignUp extends Component {
                             {error && <p className="red">{error}</p>}
                         </div>
                         <div className="Signup_form_first_name">
-                            <label htmlFor="Signup_first_name">
+                            <label htmlFor="Signup_first_name" className="Signup_label_first_name">
                                 First Name
                             </label>
                             <input
@@ -111,7 +111,7 @@ export default class SignUp extends Component {
                             />
                         </div>
                         <div className="Signup_form_last_name">
-                            <label htmlFor="Signup_last_name">
+                            <label htmlFor="Signup_last_name" className="Signup_label_last_name">
                                 Last Name
                             </label>
                             <input
@@ -123,7 +123,7 @@ export default class SignUp extends Component {
                             />
                         </div>
                         <div className="Signup_form_user_name">
-                            <label htmlFor="Signup_user_name">
+                            <label htmlFor="Signup_user_name" className="Signup_label_user_name">
                                 User Name
                             </label>
                             <input
@@ -135,7 +135,7 @@ export default class SignUp extends Component {
                             />
                         </div>
                         <div className="Signup_form_password">
-                            <label htmlFor="SIgnup_password">
+                            <label htmlFor="SIgnup_password" className="Signup_label_password">
                                 Password
                             </label>
                             <input
@@ -146,7 +146,7 @@ export default class SignUp extends Component {
                                 onChange={this.handlePasswordChange}
                             />
                         </div>
-                        <button type="submit">
+                        <button type="submit" className="Signup_button">
                             Sign Up
                         </button>
                     </fieldset>

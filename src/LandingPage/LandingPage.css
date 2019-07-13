@@ -1,7 +1,8 @@
 .Landing_page_content_section {
     text-align: center;
     color: #023570;
-    padding-top: 50px;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 
 .Calendar_icon {
@@ -16,13 +17,13 @@
 }
 
 .subtitle {
-    font-size: 26px;
-    padding-bottom: 20px;
+    font-size: 30px;
+    padding-bottom: 15px;
 }
 
 .paragraph_content {
     font-size: 17px;
     padding: 15px;
-    font-weight: bolder;
+    font-weight: 500;
     padding-bottom: 20px;
 }
