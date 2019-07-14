@@ -2,9 +2,17 @@
     display: block;
 }
 
+.Login_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 .Login {
     padding: 20px;
     background-color: #71b6d1;
+    border-bottom: 3px solid #fdd524;
 }
 
 .Login_form_user_name, .Login_form_password {
@@ -31,7 +39,7 @@ label {
 }
 
 .Login_button {
-    margin: 15px auto 50px;
+    margin-top: 5px;
     color: #023570;
     border: none;
     border-radius: 5px;
