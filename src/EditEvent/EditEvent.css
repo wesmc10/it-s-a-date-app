@@ -1,6 +1,15 @@
 .Edit_event_title {
-    font-size: 36px;
+    font-family: 'Neucha', cursive;
+    font-size: 40px;
+    letter-spacing: 3px;
     text-align: center;
+    margin: 30px 15px;
+}
+
+.Edit_event_form_name, .Edit_event_form_description,
+.Edit_event_form_time, .Edit_event_form_location,
+.Edit_event_form_other {
+    margin-left: 15px;
 }
 
 .Edit_event_name_label, #Edit_event_name,
@@ -11,22 +20,51 @@
     display: block;
 }
 
-.Edit_event_form {
-    margin-left: 15px;
-}
-
 .Edit_event_name_label, .Edit_event_description_label,
 .Edit_event_time_label, .Edit_event_location_label,
 .Edit_event_other_label {
     margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 #Edit_event_name, #Edit_event_description,
 #Edit_event_time, #Edit_event_location,
 #Edit_event_other {
     margin-bottom: 10px;
+    border-radius: 3px;
+    padding-left: 5px;
 }
 
-.Edit_event_submit {
-    margin-right: 8px;
+#Edit_event_name, #Edit_event_location {
+    height: 25px;
+}
+
+#Edit_event_description, #Edit_event_other {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.Edit_event_update, .Edit_event_cancel {
+    margin-top: 15px;
+    color: #023570;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 16px;
+    background-color: #fcdf60;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+.Edit_event_update:hover, .Edit_event_cancel:hover {
+    cursor: pointer;
+    background-color: #fdd524;
+}
+
+.Edit_event_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }

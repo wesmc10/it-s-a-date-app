@@ -202,12 +202,14 @@ export default class EditEvent extends Component {
                                 onChange={this.handleOtherChange}
                             />
                         </div>
-                        <button type="submit" className="Edit_event_submit">
-                            Update
-                        </button>
-                        <button type="reset" onClick={this.handleClickCancel}>
-                            Cancel
-                        </button>
+                        <div className="Edit_event_buttons">
+                            <button type="submit" className="Edit_event_update">
+                                Update
+                            </button>
+                            <button type="reset" className="Edit_event_cancel" onClick={this.handleClickCancel}>
+                                Cancel
+                            </button>
+                        </div>
                     </form>
                 </section>
             </div>
