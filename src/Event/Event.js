@@ -58,7 +58,7 @@ export default class Event extends Component {
                                 <FontAwesomeIcon
                                     icon={faEdit}
                                 />
-                                <span className="Tooltip_edit_text">
+                                <span className="Tooltip_edit_event_text">
                                     Edit Event
                                 </span>
                             </span>
@@ -70,7 +70,7 @@ export default class Event extends Component {
                                 <FontAwesomeIcon
                                     icon={faTrashAlt}
                                 />
-                                <span className="Tooltip_delete_text">
+                                <span className="Tooltip_delete_event_text">
                                     Delete Event
                                 </span>
                             </span>

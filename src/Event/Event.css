@@ -64,3 +64,61 @@
     cursor: pointer;
     background-color: #fdd524;
 }
+
+.Tooltip_edit_event_text {
+    visibility: hidden;
+    width: 100px;
+    font-size: 14px;
+    background-color: #023570;
+    color: #fdd524;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 10%;
+    left: 115%;
+}
+
+.Tooltip_edit:hover .Tooltip_edit_event_text {
+    visibility: visible;
+}
+
+.Tooltip_delete_event_text {
+    visibility: hidden;
+    width: 120px;
+    font-size: 14px;
+    background-color: #023570;
+    color: #fdd524;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 10%;
+    right: 120%;
+}
+
+.Tooltip_delete:hover .Tooltip_delete_event_text {
+    visibility: visible;
+}
+
+.Tooltip_edit_event_text::after {
+    content: "";
+    position: absolute;
+    top: 35%;
+    right: 100%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #023570 transparent transparent;
+}
+
+.Tooltip_delete_event_text::after {
+    content: "";
+    position: absolute;
+    top: 35%;
+    left: 100%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent #023570;
+}
