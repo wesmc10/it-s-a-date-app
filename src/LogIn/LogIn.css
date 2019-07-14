@@ -54,3 +54,23 @@ label {
     cursor: pointer;
     background-color: #fdd524;
 }
+
+@media screen and (min-width: 700px) {
+    .Login_form {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .Login_form_password {
+        margin-right: 25px;
+    }
+
+    .Login_label_user_name, .Login_label_password,
+    #Login_password, #Login_user_name {
+        display: block;
+    }
+
+    .Login_form_user_name {
+        margin-right: 15px;
+    }
+}
