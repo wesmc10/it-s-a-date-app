@@ -17,7 +17,7 @@
 
 .Modal_section {
     position: fixed;
-    background: white;
+    background: #f1f1f1;
     width: 80%;
     height: auto;
     top: 50%;
@@ -27,11 +27,38 @@
 
 .Events_for_this_day, .Create_event_link {
     display: block;
-    padding: 10px;
+}
+
+.Events_for_this_day {
+    margin: 30px 15px 15px;
+}
+
+/* .Events_for_this_day_link:hover, .close_window_icon:hover, .Create_event_icon:hover {
+    color: #fdd524;
+} */
+
+.Create_event_link {
+    text-align: center;
+    margin: 25px 0 15px;
+}
+
+.Create_event_icon {
+    font-size: 30px;
 }
 
 .hide_modal_button {
+    visibility: hidden;
     position: absolute;
     right: 1%;
     top: 2%;
+}
+
+.hide_modal_button:hover {
+    cursor: pointer;
+}
+
+.close_window_icon {
+    visibility: visible;
+    color: #023570;
+    font-size: 20px;
 }

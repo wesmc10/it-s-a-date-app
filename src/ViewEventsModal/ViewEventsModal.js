@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import convertTime from 'convert-time';
 import './ViewEventsModal.css';
 import ItsADateContext from '../ItsADateContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWindowClose, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 
 export default class ViewEventsModal extends Component {
     static contextType = ItsADateContext;
@@ -17,18 +19,24 @@ export default class ViewEventsModal extends Component {
             <div className={showOrHideModalClassName}>
                 <section className="Modal_section">
                     <button type="button" className="hide_modal_button" onClick={hideModal}>
-                        X
+                        <span className="close_window_icon">
+                            <FontAwesomeIcon icon={faWindowClose} />
+                        </span>
                     </button>
                     {userEvents.filter(event => event.day_id === clickedDay).map(event =>
                         <div className="Events_for_this_day"  key={event.id}>
-                            <Link to={`/${event.id}/event`}>
+                            <Link to={`/${event.id}/event`} className="Events_for_this_day_link">
                                 {`${event.event_name} at ${convertTime(event.event_time, 'hh:MM A')}`}
                             </Link>
                         </div>
                     )}
                     <div className="Create_event_link">
                         <Link to={`/${this.context.currentUser.id}/create-event`}>
-                            Create a New Event
+                            <span className="Create_event_icon">
+                                <FontAwesomeIcon
+                                    icon={faPlusCircle}
+                                />
+                            </span>
                         </Link>
                     </div>
                 </section>
