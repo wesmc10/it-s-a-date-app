@@ -114,18 +114,20 @@ export default class Calendar extends Component {
                         </Link>
                     </div>
                 </section>
-                <section className="Calendar_name_section">
-                    <h1 className="Calendar_name">{currentCalendar.calendar_name}</h1>
-                </section>
-                <section className="Calendar_view_calendar">
-                    <Month 
-                        {...this.props}
-                        prevMonth={this.handlePreviousMonth}
-                        nextMonth={this.handleNextMonth}
-                        currentMonth={this.state.currentMonth}
-                        showModal={this.handleShowModal}
-                    />
-                </section>
+                <div className="Calendar_flex_container">
+                    <section className="Calendar_name_section">
+                        <h1 className="Calendar_name">{currentCalendar.calendar_name}</h1>
+                    </section>
+                    <section className="Calendar_view_calendar">
+                        <Month 
+                            {...this.props}
+                            prevMonth={this.handlePreviousMonth}
+                            nextMonth={this.handleNextMonth}
+                            currentMonth={this.state.currentMonth}
+                            showModal={this.handleShowModal}
+                        />
+                    </section>
+                </div>
                 <div className="View_events_modal">
                     <ViewEventsModal
                         show={this.state.showModal}

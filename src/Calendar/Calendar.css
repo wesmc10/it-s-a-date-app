@@ -6,18 +6,23 @@
     text-align: center;
 }
 
+.Calendar_flex_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 .Calendar_edit_icon {
-    margin-left: 15px;
     font-size: 25px;
 }
 
 .Calendar_delete_icon {
     font-size: 25px;
-    margin-right: 15px;
 }
 
 .Calendar_icon_section {
-    margin-top: 15px;
+    margin: 15px 15px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -91,4 +96,37 @@
     border-width: 5px;
     border-style: solid;
     border-color: transparent transparent transparent #023570;
+}
+
+@media screen and (min-width: 450px) {
+    .Calendar_icon_section {
+        margin-right: 25px;
+        margin-left: 25px;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .Calendar_icon_section {
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .Calendar_icon_section {
+        margin-right: 35px;
+        margin-left: 35px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .Calendar_icon_section {
+        margin-top: 25px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .Calendar_icon_section {
+        margin-top: 25px;
+    }
 }
