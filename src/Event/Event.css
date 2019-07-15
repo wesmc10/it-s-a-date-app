@@ -144,6 +144,18 @@
     .Event_edit_icon, .Event_delete_icon {
         font-size: 30px;
     }
+
+    .Tooltip_edit_event_text {
+        top: 15%;
+        left: 125%;
+        font-size: 15px;
+    }
+
+    .Tooltip_delete_event_text {
+        top: 15%;
+        right: 130%;
+        font-size: 15px;
+    }
 }
 
 @media screen and (min-width: 650px) {
