@@ -10,8 +10,12 @@
     align-items: center;
 }
 
-.Landing_page_content_section, .Signup_section {
+.Landing_page_content_section {
     margin: 50px 15px 15px;
+}
+
+.Signup_section {
+    margin: 40px 15px 20px;
 }
 
 .Calendar_icon {

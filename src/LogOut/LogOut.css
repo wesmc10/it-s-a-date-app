@@ -28,3 +28,53 @@ a:link, a:visited {
 .LogOut_link {
     margin-right: 15px;
 }
+
+@media screen and (min-width: 450px) {
+    .Calendar_icon_header {
+        margin-left: 25px;
+    }
+
+    .LogOut_link {
+        margin-right: 25px;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .Calendar_icon_header {
+        margin-left: 30px;
+    }
+
+    .LogOut_link {
+        margin-right: 30px;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .Calendar_icon_header {
+        margin-left: 35px;
+    }
+
+    .LogOut_link {
+        margin-right: 35px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .Calendar_icon_header {
+        font-size: 50px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .Calendar_icon_header {
+        font-size: 55px;
+    }
+
+    .Calendar_icon_header {
+        margin-left: 40px;
+    }
+
+    .LogOut_link {
+        margin-right: 40px;
+    }
+}

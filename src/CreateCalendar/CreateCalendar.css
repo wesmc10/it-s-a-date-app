@@ -25,6 +25,10 @@
 .Create_calendar_form {
     margin-left: 15px;
     margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .Create_calendar_button {
@@ -43,4 +47,61 @@
 .Create_calendar_button:hover {
     cursor: pointer;
     background-color: #fdd524;
+}
+
+@media screen and (min-width: 550px) {
+    .Create_calendar_title {
+        font-size: 50px;
+    }
+
+    .Create_calendar_label {
+        font-size: 18px;
+    }
+
+    #Create_calendar_name {
+        height: 27px;
+        width: 250px;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .Create_calendar_title {
+        font-size: 60px;
+    }
+
+    .Create_calendar_label {
+        font-size: 20px;
+    }
+
+    #Create_calendar_name {
+        height: 30px;
+        width: 275px;
+        margin-bottom: 20px;
+    }
+
+    .Create_calendar_button {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .Create_calendar_title {
+        font-size: 65px;
+    }
+
+    .Create_calendar_label {
+        font-size: 22px;
+    }
+
+    #Create_calendar_name {
+        height: 32px;
+        width: 300px;
+        margin-bottom: 25px;
+    }
+
+    .Create_calendar_button {
+        font-size: 19px;
+        padding: 11px 22px;
+    }
 }
