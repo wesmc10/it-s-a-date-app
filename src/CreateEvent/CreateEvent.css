@@ -68,3 +68,11 @@
     flex-direction: row;
     justify-content: space-evenly;
 }
+
+.Create_event_flex_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 500px;
+}
