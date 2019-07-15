@@ -60,7 +60,8 @@
 
     #Create_calendar_name {
         height: 27px;
-        width: 250px;
+        width: 300px;
+        font-size: 15px;
     }
 }
 
@@ -75,12 +76,13 @@
 
     #Create_calendar_name {
         height: 30px;
-        width: 275px;
+        width: 400px;
         margin-bottom: 20px;
+        font-size: 17px;
     }
 
     .Create_calendar_button {
-        font-size: 18px;
+        font-size: 20px;
         padding: 10px 20px;
     }
 }
@@ -96,12 +98,13 @@
 
     #Create_calendar_name {
         height: 32px;
-        width: 300px;
+        width: 450px;
         margin-bottom: 25px;
+        font-size: 18px;
     }
 
     .Create_calendar_button {
-        font-size: 19px;
-        padding: 11px 22px;
+        font-size: 22px;
+        padding: 12px 24px;
     }
 }

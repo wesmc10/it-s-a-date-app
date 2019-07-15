@@ -74,5 +74,117 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    max-width: 500px;
+}
+
+@media screen and (min-width: 550px) {
+    .Create_event_title {
+        font-size: 50px;
+    }
+
+    .Create_event_name_label, .Create_event_description_label,
+    .Create_event_time_label, .Create_event_location_label,
+    .Create_event_other_label {
+        font-size: 18px;
+    }
+
+    #Create_event_name, #Create_event_location {
+        height: 27px;
+        width: 300px;
+    }
+
+    #Create_event_description, #Create_event_other {
+        width: 350px;
+    }
+
+    #Create_event_name, #Create_event_description,
+    #Create_event_time, #Create_event_location,
+    #Create_event_other {
+        font-size: 15px;
+    }
+
+    #Create_event_time {
+        height: 27px;
+    }
+
+    .Create_event_buttons {
+        margin-bottom: 80px;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .Create_event_title {
+        font-size: 60px;
+    }
+
+    .Create_event_name_label, .Create_event_description_label,
+    .Create_event_time_label, .Create_event_location_label,
+    .Create_event_other_label {
+        font-size: 20px;
+    }
+
+    #Create_event_name, #Create_event_location {
+        height: 30px;
+        width: 400px;
+    }
+
+    #Create_event_description, #Create_event_other {
+        width: 450px;
+    }
+
+    #Create_event_time {
+        height: 30px;
+    }
+
+    #Create_event_name, #Create_event_description,
+    #Create_event_time, #Create_event_location,
+    #Create_event_other {
+        margin-bottom: 20px;
+        font-size: 17px;
+    }
+
+    .Create_event_submit, .Create_event_cancel {
+        font-size: 20px;
+        padding: 10px 20px;
+    }
+
+    .Create_event_submit {
+        margin-right: 30px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .Create_event_title {
+        font-size: 65px;
+    }
+
+    .Create_event_name_label, .Create_event_description_label,
+    .Create_event_time_label, .Create_event_location_label,
+    .Create_event_other_label {
+        font-size: 22px;
+    }
+
+    #Create_event_name, #Create_event_location {
+        height: 32px;
+        width: 450px;
+    }
+
+    #Create_event_description, #Create_event_other {
+        width: 500px;
+    }
+
+    #Create_event_time {
+        height: 32px;
+    }
+
+    #Create_event_name, #Create_event_description,
+    #Create_event_time, #Create_event_location,
+    #Create_event_other {
+        margin-bottom: 25px;
+        font-size: 18px;
+    }
+
+    .Create_event_submit, .Create_event_cancel {
+        font-size: 22px;
+        padding: 12px 24px;
+    }
 }
