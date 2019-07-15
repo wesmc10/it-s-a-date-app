@@ -55,7 +55,7 @@ label {
     background-color: #fdd524;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 630px) {
     .Login_form {
         flex-direction: row;
         justify-content: center;
@@ -72,5 +72,11 @@ label {
 
     .Login_form_user_name {
         margin-right: 15px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    #Login_password, #Login_user_name {
+        width: 200px;
     }
 }

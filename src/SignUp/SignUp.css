@@ -55,3 +55,98 @@ legend {
     cursor: pointer;
     background-color: #fdd524;
 }
+
+@media screen and (min-width: 700px) {
+    legend {
+        font-size: 30px;
+    }
+
+    .Signup_label_first_name, .Signup_label_last_name, .Signup_label_user_name, .Signup_label_password {
+        font-size: 18px;
+    }
+
+    #Signup_first_name, #Signup_last_name, #Signup_user_name, #Signup_password {
+        height: 28px;
+        width: 230px;
+    }
+
+    .Signup_label_first_name {
+        margin-right: 7px;
+    }
+
+    .Signup_label_last_name {
+        margin-right: 10.5px;
+    }
+
+    .Signup_label_user_name {
+        margin-right: 6.5px;
+    }
+
+    .Signup_label_password {
+        margin-right: 21px;
+    }
+
+    .Signup_button {
+        font-size: 17px;
+        padding: 10px 20px;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    legend {
+        font-size: 35px;
+    }
+
+    .Signup_label_first_name, .Signup_label_last_name, .Signup_label_user_name, .Signup_label_password {
+        font-size: 20px;
+    }
+
+    #Signup_first_name, #Signup_last_name, #Signup_user_name, #Signup_password {
+        height: 30px;
+    }
+
+    .Signup_label_first_name {
+        margin-right: 8px;
+    }
+
+    .Signup_label_last_name {
+        margin-right: 11.5px;
+    }
+
+    .Signup_label_password {
+        margin-right: 23px;
+    }
+
+    .Signup_button {
+        font-size: 18px;
+        padding: 12px 24px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    legend {
+        font-size: 40px;
+        margin-bottom: 25px;
+    }
+
+    .Signup_label_first_name, .Signup_label_last_name, .Signup_label_user_name, .Signup_label_password {
+        font-size: 22px;
+    }
+
+    #Signup_first_name, #Signup_last_name, #Signup_user_name, #Signup_password {
+        height: 32px;
+    }
+
+    .Signup_label_password {
+        margin-right: 24.5px;
+    }
+
+    .Signup {
+        margin-top: 20px;
+    }
+
+    .Signup_form_first_name, .Signup_form_last_name, .Signup_form_user_name, .Signup_form_password {
+        margin-bottom: 12px;
+    }
+}

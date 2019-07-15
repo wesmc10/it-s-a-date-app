@@ -31,6 +31,7 @@
 }
 
 .paragraph_content {
+    max-width: 500px;
     font-size: 17px;
     margin: 15px 15px 0;
     font-weight: 500;
@@ -43,9 +44,35 @@
 
     .subtitle {
         font-size: 35px;
+        margin-bottom: 20px;
     }
 
     .paragraph_content {
         font-size: 20px;
+    }
+
+    .Calendar_icon {
+        margin-right: 25px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .title {
+        font-size: 75px;
+    }
+
+    .subtitle {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+
+    .paragraph_content {
+        font-size: 22px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .Landing_page_flex_container {
+        flex-direction: row;
     }
 }
