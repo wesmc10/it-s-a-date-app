@@ -7,17 +7,15 @@
 }
 
 .Event_edit_icon {
-    margin-left: 15px;
     font-size: 25px;
 }
 
 .Event_delete_icon {
     font-size: 25px;
-    margin-right: 15px;
 }
 
 .Event_icon_section {
-    margin-top: 15px;
+    margin: 15px 15px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -43,7 +41,7 @@
 }
 
 .section_tag {
-    font-size: 30px;
+    font-size: 26px;
     margin-bottom: 10px;
 }
 
@@ -121,4 +119,83 @@
     border-width: 5px;
     border-style: solid;
     border-color: transparent transparent transparent #023570;
+}
+
+@media screen and (min-width: 450px) {
+    .Event_icon_section {
+        margin-right: 25px;
+        margin-left: 25px;
+    }
+}
+
+@media screen and (min-width: 550px) {
+    .Event_name {
+        font-size: 55px;
+    }
+
+    .section_tag {
+        font-size: 30px;
+    }
+
+    .paragraph {
+        font-size: 19px;
+    }
+
+    .Event_edit_icon, .Event_delete_icon {
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .Event_icon_section {
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .Event_name {
+        font-size: 65px;
+    }
+
+    .section_tag {
+        font-size: 33px;
+    }
+
+    .paragraph {
+        font-size: 21px;
+    }
+
+    .Event_back_button {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+
+    .Event_icon_section {
+        margin-right: 35px;
+        margin-left: 35px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .Event_icon_section {
+        margin-top: 25px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .Event_name {
+        font-size: 70px;
+    }
+
+    .Event_back_button {
+        font-size: 20px;
+        padding: 11px 22px;
+    }
+
+    .Event_icon_section {
+        margin-top: 30px;
+        margin-right: 40px;
+        margin-left: 40px;
+    }
 }

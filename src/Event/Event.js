@@ -66,7 +66,7 @@ export default class Event extends Component {
                     </div>
                     <div className="Event_delete_button Tooltip_delete">
                         <Link to={`/${id}/calendar`} onClick={this.handleDeleteEvent}>
-                            <span className="Calendar_delete_icon">
+                            <span className="Event_delete_icon">
                                 <FontAwesomeIcon
                                     icon={faTrashAlt}
                                 />
