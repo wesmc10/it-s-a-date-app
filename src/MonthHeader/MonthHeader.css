@@ -30,3 +30,66 @@
     font-weight: 500;
     color: #71b6d1;
 }
+
+@media screen and (min-width: 550px) {
+    .Month_header {
+        font-size: 25px;
+        padding: 30px;
+    }
+
+    .Month_and_year {
+        font-size: 35px;
+    }
+
+    .Month_next {
+        right: 25px;
+        top: 38px;
+    }
+
+    .Month_previous {
+        left: 25px;
+        top: 38px;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .Month_header {
+        font-size: 28px;
+        padding: 40px;
+    }
+
+    .Month_and_year {
+        font-size: 45px;
+    }
+
+    .Month_next {
+        right: 35px;
+        top: 53px;
+    }
+
+    .Month_previous {
+        left: 35px;
+        top: 53px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .Month_header {
+        font-size: 35px;
+        padding: 55px;
+    }
+
+    .Month_and_year {
+        font-size: 55px;
+    }
+
+    .Month_next {
+        right: 50px;
+        top: 72px;
+    }
+
+    .Month_previous {
+        left: 50px;
+        top: 72px;
+    }
+}

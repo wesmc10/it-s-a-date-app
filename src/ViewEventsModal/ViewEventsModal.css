@@ -19,10 +19,12 @@
     position: fixed;
     background: #f1f1f1;
     width: 80%;
+    max-width: 450px;
     height: auto;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border-radius: 5px;
 }
 
 .Events_for_this_day, .Create_event_link {
@@ -31,11 +33,8 @@
 
 .Events_for_this_day {
     margin: 30px 15px 15px;
+    text-align: center;
 }
-
-/* .Events_for_this_day_link:hover, .close_window_icon:hover, .Create_event_icon:hover {
-    color: #fdd524;
-} */
 
 .Create_event_link {
     text-align: center;
@@ -61,4 +60,18 @@
     visibility: visible;
     color: #023570;
     font-size: 20px;
+}
+
+@media screen and (min-width: 550px) {
+    .Events_for_this_day_link:link {
+        font-size: 22px;
+    }
+
+    .close_window_icon {
+        font-size: 25px;
+    }
+
+    .Create_event_icon {
+        font-size: 36px;
+    }
 }

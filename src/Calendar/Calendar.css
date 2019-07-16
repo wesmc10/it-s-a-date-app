@@ -105,6 +105,16 @@
     }
 }
 
+@media screen and (min-width: 550px) {
+    .Calendar_name {
+        font-size: 55px;
+    }
+
+    .Calendar_edit_icon, .Calendar_delete_icon {
+        font-size: 30px;
+    }
+}
+
 @media screen and (min-width: 650px) {
     .Calendar_icon_section {
         margin-right: 30px;
@@ -113,6 +123,11 @@
 }
 
 @media screen and (min-width: 850px) {
+    .Calendar_name {
+        font-size: 65px;
+        margin-bottom: 40px;
+    }
+
     .Calendar_icon_section {
         margin-right: 35px;
         margin-left: 35px;
@@ -126,7 +141,13 @@
 }
 
 @media screen and (min-width: 1200px) {
+    .Calendar_name {
+        font-size: 70px;
+    }
+
     .Calendar_icon_section {
-        margin-top: 25px;
+        margin-top: 30px;
+        margin-right: 40px;
+        margin-left: 40px;
     }
 }

@@ -2,3 +2,22 @@
     width: 320px;
     margin: 20px 15px 50px;
 }
+
+@media screen and (min-width: 550px) {
+    .Month {
+        width: 420px;
+        margin-bottom: 125px;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .Month {
+        width: 570px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .Month {
+        width: 680px;
+    }
+}

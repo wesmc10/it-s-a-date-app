@@ -11,3 +11,21 @@
     border-left: 2px solid #023570;
     border-bottom: 2px solid #023570;
 }
+
+@media screen and (min-width: 550px) {
+    .day_name_column {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .day_name_column {
+        font-size: 22px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .day_name_column {
+        font-size: 27px;
+    }
+}
