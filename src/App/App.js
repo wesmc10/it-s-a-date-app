@@ -9,6 +9,7 @@ import './App.css';
 import Calendar from '../Calendar/Calendar';
 import EditCalendarName from '../EditCalendarName/EditCalendarName';
 import EditEvent from '../EditEvent/EditEvent';
+import ScrollToTop from '../ScrollToTop/ScrollToTop';
 
 export default class App extends Component {
 
@@ -125,37 +126,39 @@ export default class App extends Component {
                 <main role="main" className="App_main">
                     {this.state.error && <p className="error">There was an error</p>}
                     <BrowserRouter>
-                        <Switch>
-                            <Route
-                                exact
-                                path='/'
-                                component={LandingPage}
-                            />
-                            <Route
-                                path='/:userId/create-calendar'
-                                component={CreateCalendar}
-                            />
-                            <Route
-                                path='/:userId/create-event'
-                                component={CreateEvent}
-                            />
-                            <Route
-                                path='/:calendarId/calendar'
-                                component={Calendar}
-                            />
-                            <Route
-                                path='/:eventId/event'
-                                component={Event}
-                            />
-                            <Route
-                                path='/:calendarId/edit-calendar'
-                                component={EditCalendarName}
-                            />
-                            <Route
-                                path='/:eventId/edit-event'
-                                component={EditEvent}
-                            />
-                        </Switch>
+                        <ScrollToTop>
+                            <Switch>
+                                <Route
+                                    exact
+                                    path='/'
+                                    component={LandingPage}
+                                />
+                                <Route
+                                    path='/:userId/create-calendar'
+                                    component={CreateCalendar}
+                                />
+                                <Route
+                                    path='/:userId/create-event'
+                                    component={CreateEvent}
+                                />
+                                <Route
+                                    path='/:calendarId/calendar'
+                                    component={Calendar}
+                                />
+                                <Route
+                                    path='/:eventId/event'
+                                    component={Event}
+                                />
+                                <Route
+                                    path='/:calendarId/edit-calendar'
+                                    component={EditCalendarName}
+                                />
+                                <Route
+                                    path='/:eventId/edit-event'
+                                    component={EditEvent}
+                                />
+                            </Switch>
+                        </ScrollToTop>
                     </BrowserRouter>
                 </main>
             </ItsADateContext.Provider>

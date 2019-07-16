@@ -113,6 +113,16 @@
     .Calendar_edit_icon, .Calendar_delete_icon {
         font-size: 30px;
     }
+
+    .Tooltip_edit_text {
+        top: 15%;
+        left: 125%;
+    }
+
+    .Tooltip_delete_text {
+        top: 15%;
+        right: 130%;
+    }
 }
 
 @media screen and (min-width: 650px) {
@@ -124,6 +134,7 @@
 
 @media screen and (min-width: 850px) {
     .Calendar_name {
+        margin-top: 0;
         font-size: 65px;
         margin-bottom: 40px;
     }
