@@ -6,7 +6,7 @@
 ## Screenshots:
 
 ### Landing Page:
-![Landing page](/Images/Landing-Page.jpg)
+![Landing page](./src/Images/Landing-Page.jpg)
 
 ### Calendar View:
 
