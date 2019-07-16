@@ -25,11 +25,14 @@ export default class EditEvent extends Component {
     };
 
     componentDidMount() {
+        // when component mounts, get current event information from storage
+        // because App state will not yet be populated
         const { eventId } = this.props.match.params;
         let currentEvents = sessionStorage.getItem('userEvents');
         currentEvents = JSON.parse(currentEvents);
         const currentEvent = currentEvents && currentEvents.find(event => event.id === parseInt(eventId));
 
+        // make sure there's a current event, and then set local state accordingly
         this.setState({
             name: currentEvent ? currentEvent.event_name : '',
             description: currentEvent ? currentEvent.description : '',

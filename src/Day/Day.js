@@ -12,6 +12,8 @@ export default class Day extends Component {
         const { userEvents } = this.context;
         this.context.addClickedDay(dayId);
 
+        // if the user clicks on a day that has events, show modal
+        // otherwise, go to create event component
         userEvents.filter(event => event.day_id === dayId).length
             ? this.props.showModal()
             : this.props.history.push(`/${userId}/create-event`);

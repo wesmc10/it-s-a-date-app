@@ -47,6 +47,7 @@
 
 .Edit_event_update, .Edit_event_cancel {
     margin-top: 15px;
+    margin-bottom: 50px;
     color: #023570;
     border: none;
     border-radius: 5px;

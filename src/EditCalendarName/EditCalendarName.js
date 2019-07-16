@@ -15,6 +15,8 @@ export default class EditCalendarName extends Component {
     static contextType = ItsADateContext;
 
     componentDidMount() {
+        // when component mounts, get current calendar information from storage
+        // because App state will not yet be populated
         let currentCalendar = sessionStorage.getItem('currentCalendar');
         currentCalendar = currentCalendar && JSON.parse(currentCalendar);
 

@@ -8,7 +8,6 @@ export default class MonthDateSection extends Component {
     static contextType = ItsADateContext;
 
     render() {
-
         const today = new Date();
         const firstDayOfMonth = dateFns.startOfMonth(this.props.currentMonth);
         const lastDayOfMonth = dateFns.endOfMonth(this.props.currentMonth);
