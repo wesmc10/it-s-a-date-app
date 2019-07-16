@@ -79,33 +79,35 @@ export default class LogIn extends Component {
                     <div role="alert">
                         {error && <p className="red">{error}</p>}
                     </div>
-                    <div className="Login_form_user_name">
-                        <label htmlFor="Login_user_name" className="Login_label_user_name">
-                            User Name
-                        </label>
-                        <input 
-                            type="text"
-                            id="Login_user_name"
-                            name="Login_user_name"
-                            required
-                            onChange={this.handleChangeUserName}
-                        />
+                    <div className="Login_flex_container">
+                        <div className="Login_form_user_name">
+                            <label htmlFor="Login_user_name" className="Login_label_user_name">
+                                User Name
+                            </label>
+                            <input 
+                                type="text"
+                                id="Login_user_name"
+                                name="Login_user_name"
+                                required
+                                onChange={this.handleChangeUserName}
+                            />
+                        </div>
+                        <div className="Login_form_password">
+                            <label htmlFor="Login_password" className="Login_label_password">
+                                Password
+                            </label>
+                            <input
+                                type="password"
+                                id="Login_password"
+                                name="Login_password"
+                                required 
+                                onChange={this.handleChangePassword}
+                            />
+                        </div>
+                        <button type="submit" className="Login_button">
+                            Log In
+                        </button>
                     </div>
-                    <div className="Login_form_password">
-                        <label htmlFor="Login_password" className="Login_label_password">
-                            Password
-                        </label>
-                        <input
-                            type="password"
-                            id="Login_password"
-                            name="Login_password"
-                            required 
-                            onChange={this.handleChangePassword}
-                        />
-                    </div>
-                    <button type="submit" className="Login_button">
-                        Log In
-                    </button>
                 </form>
             </div>
         )
