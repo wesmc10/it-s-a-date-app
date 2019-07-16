@@ -1,6 +1,6 @@
 .day_date_column {
     display: inline-block;
-    width: calc(100% / 7);
+    width: calc(100% / 7.001);
     text-align: center;
     border-right: 1px solid #023570;
     border-bottom: 1px solid #023570;
