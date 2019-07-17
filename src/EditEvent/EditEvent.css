@@ -75,6 +75,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    margin-right: 15px;
 }
 
 @media screen and (min-width: 550px) {
