@@ -42,6 +42,10 @@ export default class App extends Component {
         }   
     }
 
+    setUserEventsSessionStorage = () => {
+        sessionStorage.setItem('userEvents', JSON.stringify(this.state.userEvents));
+    }
+
     handleAddNewUserEvent = (newEvent) => {
         this.setState({
             userEvents: [
@@ -49,14 +53,14 @@ export default class App extends Component {
                 newEvent
             ]
         });
-        sessionStorage.setItem('userEvents', JSON.stringify(this.state.userEvents));
+        this.setUserEventsSessionStorage();
     }
 
     handleAddUserEvents = (events) => {
         this.setState({
             userEvents: events
         });
-        sessionStorage.setItem('userEvents', JSON.stringify(this.state.userEvents));
+        this.setUserEventsSessionStorage();
     }
 
     handleDeleteEvent = (eventId) => {
@@ -67,7 +71,7 @@ export default class App extends Component {
         this.setState({
             userEvents: newEvents
         });
-        sessionStorage.setItem('userEvents', JSON.stringify(this.state.userEvents));
+        this.setUserEventsSessionStorage();
     }
 
     handleUpdateEvent = (updatedEvent) => {
@@ -79,7 +83,7 @@ export default class App extends Component {
         this.setState({
             userEvents: newEvents
         });
-        sessionStorage.setItem('userEvents', JSON.stringify(this.state.userEvents));
+        this.setUserEventsSessionStorage();
     }
 
     handleAddCurrentUser = (user) => {

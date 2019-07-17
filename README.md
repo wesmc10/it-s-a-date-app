@@ -21,12 +21,12 @@
 ![Event](./src/Images/Event.jpg "Event")
 
 ## Motivation
-I wanted to create a calendar app that combines the functionality that users would
-expect from such an app, along with a unique, fun display.
+I wanted to create a calendar app that combines basic functionality that users would expect from such an app,
+along with a unique, fun display.
 
 ## Summary
 This app allows users to create a password-protected calendar to store their events.
-They are able to create, view, edit, and delete calendars and events.
+Users create a single calendar (which can be deleted and edited) and can create, view, edit, and delete events.
 
 ## Technologies Used
 * HTML
