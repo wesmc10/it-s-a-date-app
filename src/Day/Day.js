@@ -14,7 +14,7 @@ export default class Day extends Component {
 
         // if the user clicks on a day that has events, show modal
         // otherwise, go to create event component
-        userEvents.filter(event => event.day_id === dayId).length
+        userEvents && userEvents.filter(event => event.day_id === dayId).length
             ? this.props.showModal()
             : this.props.history.push(`/${userId}/create-event`);
     }
@@ -26,7 +26,7 @@ export default class Day extends Component {
         return (
             <div className={this.props.className} onClick={this.handleClickedDayAndModal}>
                 <span className="Event_alert">
-                    {userEvents.filter(event => event.day_id === dayId).length
+                    {userEvents && userEvents.filter(event => event.day_id === dayId).length
                         ? userEvents.filter(event => event.day_id === dayId).length 
                         : ''}
                 </span>

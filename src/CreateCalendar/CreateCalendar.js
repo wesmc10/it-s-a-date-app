@@ -43,6 +43,7 @@ export default class CreateCalendar extends Component {
                 name: ''
             });
             this.context.addCurrentCalendar(res.calendar);
+            this.context.addUserEvents([]);
             this.props.history.push(`/${res.calendar.id}/calendar`);
         })
         .catch(res => {

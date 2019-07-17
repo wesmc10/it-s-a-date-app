@@ -57,6 +57,7 @@ export default class Calendar extends Component {
             error: null
         });
         const { currentCalendar } = this.context;
+        const userId = this.context.currentUser.id;
 
         fetch(`${config.API_ENDPOINT}/calendars/${currentCalendar.id}`, {
             method: 'DELETE',
@@ -67,6 +68,8 @@ export default class Calendar extends Component {
         })
         .then(res => {
             this.context.addCurrentCalendar({});
+            this.props.history.push(`/${userId}/create-calendar`);
+            
             if (!res.ok) {
                 throw new Error(res.statusText);
             }
