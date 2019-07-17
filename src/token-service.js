@@ -9,6 +9,9 @@ const TokenService = {
     },
     getAuthToken() {
         return sessionStorage.getItem(config.TOKEN_KEY);
+    },
+    hasAuthToken() {
+        return !!TokenService.getAuthToken();
     }
 }
 

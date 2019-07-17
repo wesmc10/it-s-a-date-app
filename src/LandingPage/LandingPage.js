@@ -4,8 +4,16 @@ import SignUp from '../SignUp/SignUp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import './LandingPage.css';
+import TokenService from '../token-service';
 
 export default function LandingPage(props) {
+
+    let currentCalendar = sessionStorage.getItem('currentCalendar');
+    currentCalendar = JSON.parse(currentCalendar);
+
+    if (TokenService.hasAuthToken()) {
+        props.history.push(`/${currentCalendar.id}/calendar`);
+    }
 
     return (
         <div className="Landing_page">
