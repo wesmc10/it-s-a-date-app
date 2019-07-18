@@ -1,5 +1,9 @@
 # It's a Date App
 
+## Demo User Credentials
+* Username: demoUser2019
+* Password: !q2W#e4R
+
 ## Live Site:
 * https://its-a-date-app.mcelroywes.now.sh/
 
