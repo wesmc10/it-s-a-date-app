@@ -14,6 +14,12 @@ export default class CreateCalendar extends Component {
 
     static contextType = ItsADateContext;
 
+    componentDidMount() {
+        if (!TokenService.hasAuthToken()) {
+            this.props.history.push('/');
+        }
+    }
+
     handleSubmit = (e) => {
         e.preventDefault();
         this.setState({
@@ -60,10 +66,6 @@ export default class CreateCalendar extends Component {
     }
 
     render() {
-        if (!TokenService.hasAuthToken()) {
-            this.props.history.push('/');
-        }
-
         const { error } = this.state;
 
         return (

@@ -45,11 +45,11 @@ export default class LogIn extends Component {
             if (!!res.dbCalendar) {
                 this.context.addCurrentCalendar(res.dbCalendar);
                 this.context.addUserEvents(res.dbEvents);
+                TokenService.saveAuthToken(res.authToken);
                 this.props.history.push(`/${this.context.currentCalendar.id}/calendar`);
-                TokenService.saveAuthToken(res.authToken);
             } else {
-                this.props.history.push(`/${this.context.currentUser.id}/create-calendar`);
                 TokenService.saveAuthToken(res.authToken);
+                this.props.history.push(`/${this.context.currentUser.id}/create-calendar`);
             }
         })
         .catch(res => {

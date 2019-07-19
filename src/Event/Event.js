@@ -12,6 +12,12 @@ import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 export default class Event extends Component {
     static contextType = ItsADateContext;
 
+    componentDidMount() {
+        if (!TokenService.hasAuthToken()) {
+            this.props.history.push('/');
+        }
+    }
+
     onClickBack = () => {
         this.props.history.goBack();
     }
@@ -41,10 +47,6 @@ export default class Event extends Component {
     }
 
     render() {
-        if (!TokenService.hasAuthToken()) {
-            this.props.history.push('/');
-        }
-
         let userEvents = sessionStorage.getItem('userEvents');
         userEvents = JSON.parse(userEvents);
         const currentEvent = userEvents && userEvents.find(event => event.id === parseInt(this.props.match.params.eventId));

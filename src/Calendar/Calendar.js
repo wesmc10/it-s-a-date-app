@@ -27,6 +27,12 @@ export default class Calendar extends Component {
         }
     };
 
+    componentDidMount() {
+        if (!TokenService.hasAuthToken()) {
+            this.props.history.push('/');
+        }
+    }
+
     handlePreviousMonth = () => {
         this.setState({
             currentMonth: dateFns.subMonths(this.state.currentMonth, 1)
@@ -82,10 +88,6 @@ export default class Calendar extends Component {
     }
 
     render() {
-        if (!TokenService.hasAuthToken()) {
-            this.props.history.push('/');
-        }
-
         const { calendarId } = this.props.match.params;
         const userId = this.context.currentUser.id;
         const { currentCalendar } = this.context;

@@ -25,6 +25,10 @@ export default class EditEvent extends Component {
     };
 
     componentDidMount() {
+        if (!TokenService.hasAuthToken()) {
+            this.props.history.push('/');
+        }
+        
         // when component mounts, get current event information from storage
         // because App state will not yet be populated
         const { eventId } = this.props.match.params;
@@ -124,10 +128,6 @@ export default class EditEvent extends Component {
     }
 
     render() {
-        if (!TokenService.hasAuthToken()) {
-            this.props.history.push('/');
-        }
-
         const { name, description, time, location, other, error } = this.state;
 
         return (
