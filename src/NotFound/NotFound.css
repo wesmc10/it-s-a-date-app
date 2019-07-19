@@ -1,0 +1,30 @@
+.Not_found_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 15px;
+}
+
+.Not_found_404 {
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 550px) {
+    .Not_found_404 {
+        font-size: 32px;
+    }
+
+    .Not_found_paragraph {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .Not_found_404 {
+        font-size: 38px;
+    }
+
+    .Not_found_paragraph {
+        font-size: 24px;
+    }
+}

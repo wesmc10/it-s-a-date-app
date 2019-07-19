@@ -10,6 +10,7 @@ import Calendar from '../Calendar/Calendar';
 import EditCalendarName from '../EditCalendarName/EditCalendarName';
 import EditEvent from '../EditEvent/EditEvent';
 import ScrollToTop from '../ScrollToTop/ScrollToTop';
+import NotFound from '../NotFound/NotFound';
 
 export default class App extends Component {
 
@@ -163,6 +164,9 @@ export default class App extends Component {
                                 <Route
                                     path='/edit-event'
                                     component={EditEvent}
+                                />
+                                <Route
+                                    component={NotFound}
                                 />
                             </Switch>
                         </ScrollToTop>
