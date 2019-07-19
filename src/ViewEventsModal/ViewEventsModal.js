@@ -25,13 +25,13 @@ export default class ViewEventsModal extends Component {
                     </button>
                     {userEvents.filter(event => event.day_id === clickedDay).sort((a, b) => (a.event_time > b.event_time) ? 1 : -1).map(event =>
                         <div className="Events_for_this_day"  key={event.id}>
-                            <Link to={`/${event.id}/event`} className="Events_for_this_day_link">
+                            <Link to={'/event'} className="Events_for_this_day_link">
                                 {`${event.event_name} at ${convertTime(event.event_time, 'hh:MM A')}`}
                             </Link>
                         </div>
                     )}
                     <div className="Create_event_link">
-                        <Link to={`/${this.context.currentUser.id}/create-event`}>
+                        <Link to={'/create-event'}>
                             <span className="Create_event_icon">
                                 <FontAwesomeIcon
                                     icon={faPlusCircle}

@@ -21,12 +21,6 @@ export default class Calendar extends Component {
 
     static contextType = ItsADateContext;
 
-    static defaultProps = {
-        match: {
-            params: () => {}
-        }
-    };
-
     componentDidMount() {
         if (!TokenService.hasAuthToken()) {
             this.props.history.push('/');
@@ -63,7 +57,6 @@ export default class Calendar extends Component {
             error: null
         });
         const { currentCalendar } = this.context;
-        const userId = this.context.currentUser.id;
 
         fetch(`${config.API_ENDPOINT}/calendars/${currentCalendar.id}`, {
             method: 'DELETE',
@@ -74,7 +67,7 @@ export default class Calendar extends Component {
         })
         .then(res => {
             this.context.addCurrentCalendar({});
-            this.props.history.push(`/${userId}/create-calendar`);
+            this.props.history.push('/create-calendar');
             
             if (!res.ok) {
                 throw new Error(res.statusText);
@@ -88,7 +81,6 @@ export default class Calendar extends Component {
     }
 
     render() {
-        const { calendarId } = this.props.match.params;
         const userId = this.context.currentUser.id;
         const { currentCalendar } = this.context;
 
@@ -99,7 +91,7 @@ export default class Calendar extends Component {
                 </header>
                 <section className="Calendar_icon_section">
                     <div className="Calendar_edit_button Tooltip_edit">
-                        <Link to={`/${calendarId}/edit-calendar`}>
+                        <Link to={'/edit-calendar'}>
                             <span className="Calendar_edit_icon">
                                 <FontAwesomeIcon
                                     icon={faEdit}

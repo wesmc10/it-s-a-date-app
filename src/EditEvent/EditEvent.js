@@ -31,10 +31,10 @@ export default class EditEvent extends Component {
         
         // when component mounts, get current event information from storage
         // because App state will not yet be populated
-        const { eventId } = this.props.match.params;
-        let currentEvents = sessionStorage.getItem('userEvents');
-        currentEvents = JSON.parse(currentEvents);
-        const currentEvent = currentEvents && currentEvents.find(event => event.id === parseInt(eventId));
+        let userEvents = sessionStorage.getItem('userEvents');
+        userEvents = JSON.parse(userEvents);
+        const clickedDay = sessionStorage.getItem('clickedDay');
+        const currentEvent = userEvents.find(event => event.day_id === clickedDay);
 
         // make sure there's a current event, and then set local state accordingly
         this.setState({
@@ -52,8 +52,11 @@ export default class EditEvent extends Component {
             error: null
         });
         const { name, description, time, location, other } = this.state;
-        const calendarId = this.context.currentCalendar.id;
-        const { eventId } = this.props.match.params;
+        let userEvents = sessionStorage.getItem('userEvents');
+        userEvents = JSON.parse(userEvents);
+        const clickedDay = sessionStorage.getItem('clickedDay');
+        const currentEvent = userEvents.find(event => event.day_id === clickedDay);
+        const eventId = currentEvent.id;
 
         fetch(`${config.API_ENDPOINT}/events/${eventId}`, {
             method: 'PATCH',
@@ -83,7 +86,7 @@ export default class EditEvent extends Component {
                 other: ''
             });
             this.context.updateEvent(res.event);
-            this.props.history.push(`/${calendarId}/calendar`);
+            this.props.history.push('/calendar');
         })
         .catch(res => {
             this.setState({
@@ -124,7 +127,6 @@ export default class EditEvent extends Component {
 
     handleClickCancel = () => {
         this.props.history.goBack();
-        this.context.addClickedDay('');
     }
 
     render() {

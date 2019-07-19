@@ -26,7 +26,7 @@ export default class CreateCalendar extends Component {
             error: null
         });
         const { name } = this.state;
-        const { userId } = this.props.match.params;
+        const { id } = this.context.currentUser;
 
         fetch(`${config.API_ENDPOINT}/calendars`, {
             method: 'POST',
@@ -36,7 +36,7 @@ export default class CreateCalendar extends Component {
             },
             body: JSON.stringify({
                 calendar_name: name,
-                user_id: userId
+                user_id: id
             })
         })
         .then(res =>
@@ -50,7 +50,7 @@ export default class CreateCalendar extends Component {
             });
             this.context.addCurrentCalendar(res.calendar);
             this.context.addUserEvents([]);
-            this.props.history.push(`/${res.calendar.id}/calendar`);
+            this.props.history.push('/calendar');
         })
         .catch(res => {
             this.setState({

@@ -8,7 +8,6 @@ export default class Day extends Component {
 
     handleClickedDayAndModal = () => {
         const dayId = this.props.id;
-        const userId = this.context.currentUser.id;
         const { userEvents } = this.context;
         this.context.addClickedDay(dayId);
 
@@ -16,7 +15,7 @@ export default class Day extends Component {
         // otherwise, go to create event component
         userEvents && userEvents.filter(event => event.day_id === dayId).length
             ? this.props.showModal()
-            : this.props.history.push(`/${userId}/create-event`);
+            : this.props.history.push('/create-event');
     }
 
     render() {

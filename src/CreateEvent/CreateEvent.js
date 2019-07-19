@@ -63,7 +63,7 @@ export default class CreateEvent extends Component {
                 other: ''
             });
             this.context.addEvent(res.event);
-            this.props.history.push(`/${calendarId}/calendar`);
+            this.props.history.push('/calendar');
             this.context.addClickedDay('');
         })
         .catch(res => {

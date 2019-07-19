@@ -27,7 +27,7 @@ export default class App extends Component {
     }
 
     hydrateStateWithSessionStorage() {
-        for (const key in this.state) {
+        for (const key of ['userEvents', 'currentUser', 'currentCalendar']) {
             if (sessionStorage.hasOwnProperty(key)) {
                 let value = sessionStorage.getItem(key);
                 try {
@@ -109,6 +109,7 @@ export default class App extends Component {
         this.setState({
             clickedDay: dayId
         });
+        sessionStorage.setItem('clickedDay', dayId);
     }
 
     render() {
@@ -140,27 +141,27 @@ export default class App extends Component {
                                     component={LandingPage}
                                 />
                                 <Route
-                                    path='/:userId/create-calendar'
+                                    path='/create-calendar'
                                     component={CreateCalendar}
                                 />
                                 <Route
-                                    path='/:userId/create-event'
+                                    path='/create-event'
                                     component={CreateEvent}
                                 />
                                 <Route
-                                    path='/:calendarId/calendar'
+                                    path='/calendar'
                                     component={Calendar}
                                 />
                                 <Route
-                                    path='/:eventId/event'
+                                    path='/event'
                                     component={Event}
                                 />
                                 <Route
-                                    path='/:calendarId/edit-calendar'
+                                    path='/edit-calendar'
                                     component={EditCalendarName}
                                 />
                                 <Route
-                                    path='/:eventId/edit-event'
+                                    path='/edit-event'
                                     component={EditEvent}
                                 />
                             </Switch>

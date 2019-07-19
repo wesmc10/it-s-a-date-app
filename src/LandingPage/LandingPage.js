@@ -8,11 +8,8 @@ import TokenService from '../token-service';
 
 export default function LandingPage(props) {
 
-    let currentCalendar = sessionStorage.getItem('currentCalendar');
-    currentCalendar = JSON.parse(currentCalendar);
-
     if (TokenService.hasAuthToken()) {
-        props.history.push(`/${currentCalendar.id}/calendar`);
+        props.history.push('/calendar');
     }
 
     return (
