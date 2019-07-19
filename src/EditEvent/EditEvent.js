@@ -124,6 +124,10 @@ export default class EditEvent extends Component {
     }
 
     render() {
+        if (!TokenService.hasAuthToken()) {
+            this.props.history.push('/');
+        }
+
         const { name, description, time, location, other, error } = this.state;
 
         return (

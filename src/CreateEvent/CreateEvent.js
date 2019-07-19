@@ -103,6 +103,10 @@ export default class CreateEvent extends Component {
     }
 
     render() {
+        if (!TokenService.hasAuthToken()) {
+            this.props.history.push('/');
+        }
+
         const { error } = this.state;
 
         return (

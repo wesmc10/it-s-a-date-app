@@ -73,6 +73,10 @@ export default class EditCalendarName extends Component {
     }
 
     render() {
+        if (!TokenService.hasAuthToken()) {
+            this.props.history.push('/');
+        }
+
         const { name, error } = this.state;
 
         return (
