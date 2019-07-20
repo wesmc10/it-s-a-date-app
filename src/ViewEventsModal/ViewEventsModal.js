@@ -10,7 +10,6 @@ export default class ViewEventsModal extends Component {
     static contextType = ItsADateContext;
 
     handleAddEvent(event){
-        console.log('adding event');
         this.context.addCurrentEvent(event);
     }
 
