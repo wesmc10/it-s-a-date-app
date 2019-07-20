@@ -32,6 +32,9 @@ export default class EditEvent extends Component {
         // when component mounts, get current event information from storage
         // because App state will not yet be populated
         let currentEvent = sessionStorage.getItem('currentEvent');
+        if (!currentEvent) {
+            this.props.history.push('/');
+        }
         currentEvent = JSON.parse(currentEvent);
 
         // make sure there's a current event, and then set local state accordingly

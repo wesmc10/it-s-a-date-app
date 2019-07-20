@@ -16,6 +16,11 @@ export default class Event extends Component {
         if (!TokenService.hasAuthToken()) {
             this.props.history.push('/');
         }
+
+        let currentEvent = sessionStorage.getItem('currentEvent');
+        if (!currentEvent) {
+            this.props.history.push('/');
+        }
     }
 
     onClickBack = () => {
