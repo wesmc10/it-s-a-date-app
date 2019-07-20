@@ -54,8 +54,8 @@ export default class SignUp extends Component {
                 password: ''
             });
             this.context.addCurrentUser(res.user);
-            this.props.history.push(`/${res.user.id}/create-calendar`);
             TokenService.saveAuthToken(res.authToken);
+            this.props.history.push('/create-calendar');
         })
         .catch(res => {
             this.setState({
