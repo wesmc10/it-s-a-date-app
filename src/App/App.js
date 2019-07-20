@@ -18,6 +18,7 @@ export default class App extends Component {
         userEvents: [],
         currentUser: {},
         currentCalendar: {},
+        currentEvent: {},
         clickedDay: ''
     };
 
@@ -28,7 +29,7 @@ export default class App extends Component {
     }
 
     hydrateStateWithSessionStorage() {
-        for (const key of ['userEvents', 'currentUser', 'currentCalendar']) {
+        for (const key of ['userEvents', 'currentUser', 'currentCalendar', 'currentEvent']) {
             if (sessionStorage.hasOwnProperty(key)) {
                 let value = sessionStorage.getItem(key);
                 try {
@@ -45,6 +46,13 @@ export default class App extends Component {
 
     setUserEventsSessionStorage = () => {
         sessionStorage.setItem('userEvents', JSON.stringify(this.state.userEvents));
+    }
+
+    handleAddCurrentEvent = (event) => {
+        this.setState({
+            currentEvent: event
+        });
+        sessionStorage.setItem('currentEvent', JSON.stringify(event));
     }
 
     handleAddNewUserEvent = (newEvent) => {
@@ -119,8 +127,10 @@ export default class App extends Component {
             userEvents: this.state.userEvents,
             currentUser: this.state.currentUser,
             currentCalendar: this.state.currentCalendar,
+            currentEvent: this.state.currentEvent,
             clickedDay: this.state.clickedDay,
             addEvent: this.handleAddNewUserEvent,
+            addCurrentEvent: this.handleAddCurrentEvent,
             addUserEvents: this.handleAddUserEvents,
             deleteEvent: this.handleDeleteEvent,
             updateEvent: this.handleUpdateEvent,

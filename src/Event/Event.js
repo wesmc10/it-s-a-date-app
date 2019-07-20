@@ -24,10 +24,8 @@ export default class Event extends Component {
 
     handleDeleteEvent = (e) => {
         e.preventDefault();
-        let userEvents = sessionStorage.getItem('userEvents');
-        userEvents = JSON.parse(userEvents);
-        const clickedDay = sessionStorage.getItem('clickedDay');
-        const currentEvent = userEvents && userEvents.find(event => event.day_id === clickedDay);
+        let currentEvent = sessionStorage.getItem('currentEvent');
+        currentEvent = JSON.parse(currentEvent);
         const eventId = currentEvent.id;
 
         fetch(`${config.API_ENDPOINT}/events/${eventId}`, {
@@ -51,10 +49,8 @@ export default class Event extends Component {
     }
 
     render() {
-        let userEvents = sessionStorage.getItem('userEvents');
-        userEvents = JSON.parse(userEvents);
-        const clickedDay = sessionStorage.getItem('clickedDay');
-        const currentEvent = userEvents && userEvents.find(event => event.day_id === clickedDay);
+        let currentEvent = sessionStorage.getItem('currentEvent');
+        currentEvent = JSON.parse(currentEvent);
 
         return (
             <div className="Event_view">

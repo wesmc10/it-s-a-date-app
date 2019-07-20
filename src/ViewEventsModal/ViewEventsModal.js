@@ -9,6 +9,11 @@ import { faWindowClose, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 export default class ViewEventsModal extends Component {
     static contextType = ItsADateContext;
 
+    handleAddEvent(event){
+        console.log('adding event');
+        this.context.addCurrentEvent(event);
+    }
+
     render() {
         const { show, hideModal } = this.props;
         const showOrHideModalClassName = show ? "Modal display" : "Modal hide";
@@ -25,7 +30,7 @@ export default class ViewEventsModal extends Component {
                     </button>
                     {userEvents.filter(event => event.day_id === clickedDay).sort((a, b) => (a.event_time > b.event_time) ? 1 : -1).map(event =>
                         <div className="Events_for_this_day"  key={event.id}>
-                            <Link to={'/event'} className="Events_for_this_day_link">
+                            <Link to={'/event'} className="Events_for_this_day_link" onClick={() => this.handleAddEvent(event)}>
                                 {`${event.event_name} at ${convertTime(event.event_time, 'hh:MM A')}`}
                             </Link>
                         </div>

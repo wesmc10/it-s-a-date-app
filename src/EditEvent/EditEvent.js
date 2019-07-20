@@ -31,10 +31,8 @@ export default class EditEvent extends Component {
         
         // when component mounts, get current event information from storage
         // because App state will not yet be populated
-        let userEvents = sessionStorage.getItem('userEvents');
-        userEvents = JSON.parse(userEvents);
-        const clickedDay = sessionStorage.getItem('clickedDay');
-        const currentEvent = userEvents.find(event => event.day_id === clickedDay);
+        let currentEvent = sessionStorage.getItem('currentEvent');
+        currentEvent = JSON.parse(currentEvent);
 
         // make sure there's a current event, and then set local state accordingly
         this.setState({
@@ -52,10 +50,8 @@ export default class EditEvent extends Component {
             error: null
         });
         const { name, description, time, location, other } = this.state;
-        let userEvents = sessionStorage.getItem('userEvents');
-        userEvents = JSON.parse(userEvents);
-        const clickedDay = sessionStorage.getItem('clickedDay');
-        const currentEvent = userEvents.find(event => event.day_id === clickedDay);
+        let currentEvent = sessionStorage.getItem('currentEvent');
+        currentEvent = JSON.parse(currentEvent);
         const eventId = currentEvent.id;
 
         fetch(`${config.API_ENDPOINT}/events/${eventId}`, {
