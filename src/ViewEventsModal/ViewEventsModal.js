@@ -18,6 +18,13 @@ export default class ViewEventsModal extends Component {
         const showOrHideModalClassName = show ? "Modal display" : "Modal hide";
         const { userEvents } = this.context;
         const { clickedDay } = this.context;
+        const handleConvertTime = (time) => {
+            if (time.startsWith('0')) {
+                return time.substring(1);
+            } else {
+                return time;
+            }
+        };
 
         return (
             <div className={showOrHideModalClassName}>
@@ -30,7 +37,7 @@ export default class ViewEventsModal extends Component {
                     {userEvents.filter(event => event.day_id === clickedDay).sort((a, b) => (a.event_time > b.event_time) ? 1 : -1).map(event =>
                         <div className="Events_for_this_day"  key={event.id}>
                             <Link to={'/event'} className="Events_for_this_day_link" onClick={() => this.handleAddEvent(event)}>
-                                {`${event.event_name} at ${convertTime(event.event_time, 'hh:MM A')}`}
+                                {`${event.event_name} at ${handleConvertTime(convertTime(event.event_time, 'hh:MM A'))}`}
                             </Link>
                         </div>
                     )}
